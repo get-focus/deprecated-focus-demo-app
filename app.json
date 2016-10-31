@@ -1,0 +1,7 @@
+{
+    "name": "Focus demo app",
+    "description": "Example of how to develop with focus",
+    "repository": "https://github.com/get-focus/focus-demo-app",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["node", "focus", "static"]
+}
