@@ -2,7 +2,7 @@
   "author": "focus@kleegroup.com",
   "name": "focus-demo-app",
   "description": "Focus demonstration application",
-  "version": "0.17.0",
+  "version": "3.0.0-beta0",
   "main": "src/index.js",
   "license": "MIT",
   "bugs": {
@@ -108,11 +108,11 @@
     "webpack-focus": "^0.12.2"
   },
   "dependencies": {
-    "focus-application": "^3.0.0-rc22",
-    "focus-components": "^3.0.0-rc18",
-    "focus-graph": "^3.0.0-rc10",
+    "focus-application": "3.0.0-rc22",
+    "focus-components": "^3.0.0-rc21",
+    "focus-graph": "3.0.0-rc10",
     "focus-notifications": "0.2.0-rc6",
-    "focus-search": "^3.0.0-rc64",
+    "focus-search": "3.0.0-rc64",
     "lodash": "^4.16.2",
     "material-design-icons-iconfont": "2.0.5",
     "material-design-lite": "1.2.1",
