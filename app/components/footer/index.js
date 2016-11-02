@@ -1,7 +1,7 @@
 import React from 'react';
 import i18next from 'i18next';
 
-function masterdataHome() {
+export default function Footer() {
     return (
         <div data-demo='footer'>
             <div>
@@ -17,6 +17,3 @@ function masterdataHome() {
         </div>
     );
 }
-
-masterdataHome.displayName = 'MasterdataHome';
-export default masterdataHome;

@@ -5,12 +5,14 @@ import ConnectedSearchBarComponent from '../components/connected-search-bar';
 import HomeHeader from './header';
 import DemoTitle from '../components/demo-title';
 import {connect as connectToHeader} from 'focus-application/behaviours/header';
+import Panel from 'focus-components/panel';
 
 class Home extends PureComponent {
     render() {
         return (
             <div data-demo='home-view'>
                 Bienvenue
+                <Panel title='title' />
                 <br/>
                 <br/>
                 <br/>
@@ -24,33 +26,32 @@ class Home extends PureComponent {
                 <br/>
                 <br/>
                 <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                bas de page
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
             </div>
         );
     }

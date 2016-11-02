@@ -14,8 +14,8 @@ import ContentActionsComponent from 'focus-components/header-actions';
 import ConfirmationPopin from 'focus-components/confirmation-popin';
 import SnackBar from 'focus-components/snackbar';
 
-import DemoMenuLeft from '../menu-left';
-import DemoFooter from '../../views/footer';
+import Menu from '../menu';
+import Footer from '../footer';
 import DevTools from '../../tools/dev-tools';
 
 //connected components
@@ -28,7 +28,7 @@ const AppHeader = props => <Header {...props} ContentActionsComponent={ContentAc
 
 const AppLayout = (props) => (
     <ConnectedScrollTrigger>
-        <Layout AppHeader={AppHeader} Footer={DemoFooter} LoadingBar={LoadingBar} ConfirmWrapper={AppConfirmComponent} Menu={DemoMenuLeft} MessageCenter={AppMessageCenter}>
+        <Layout AppHeader={AppHeader} Footer={Footer} LoadingBar={LoadingBar} ConfirmWrapper={AppConfirmComponent} Menu={Menu} MessageCenter={AppMessageCenter}>
             {props.children}
             {props.hasDevtools && <DevTools />}
         </Layout>
