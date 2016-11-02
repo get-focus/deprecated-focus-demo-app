@@ -109,7 +109,7 @@
   },
   "dependencies": {
     "focus-application": "3.0.0-rc22",
-    "focus-components": "^3.0.0-rc21",
+    "focus-components": "^3.0.0-rc22",
     "focus-graph": "3.0.0-rc10",
     "focus-notifications": "0.2.0-rc6",
     "focus-search": "3.0.0-rc64",
