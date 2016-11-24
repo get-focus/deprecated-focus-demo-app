@@ -1,8 +1,7 @@
 import React, {PureComponent} from 'react';
 import compose from 'lodash/flowRight';
-//import ConnectedSearch from '../components/connected-advanced-search';
-import ConnectedSearchBarComponent from '../components/connected-search-bar';
-import HomeHeader from './header';
+import ConnectedAdvancedSearch from '../components/search/connected-advanced-search';
+import SearchHeader from '../components/search/header';
 import DemoTitle from '../components/demo-title';
 import {connect as connectToHeader} from 'focus-application/behaviours/header';
 import Panel from 'focus-components/panel';
@@ -11,47 +10,7 @@ class Home extends PureComponent {
     render() {
         return (
             <div data-demo='home-view'>
-                Bienvenue
-                <Panel title='title' />
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
+                <ConnectedAdvancedSearch />
             </div>
         );
     }
@@ -59,9 +18,8 @@ class Home extends PureComponent {
 
 const HomeExtended = compose(
     connectToHeader({
-        actions: {primary: [{action: () => console.log('Primaire'), label: 'Primaire', icon: 'home'}], secondary: [{action: () => console.log('secondary'), label: 'Secondaire', icon: 'home'}]},
-        ExpandedHeaderComponent: HomeHeader,
-        SummaryHeaderComponent: HomeHeader,
+        ExpandedHeaderComponent: SearchHeader,
+        SummaryHeaderComponent: SearchHeader,
         LeftHeaderComponent: DemoTitle
     })
 )(Home);

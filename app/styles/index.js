@@ -23,6 +23,7 @@ import './home.scss';
 import './home-header.scss';
 import './list-action-bar.scss';
 import './list-summary.scss';
+import './list-component.scss';
 import './masterdata.scss';
 import './material-card.scss';
 import './menu-left.scss';
@@ -33,7 +34,6 @@ import './poster.scss';
 import './preview.scss';
 import './quick-search.scss';
 import './scrollspy-container.scss';
-import './selection-list.scss';
 import './trailer.scss';
 
 //Style for print

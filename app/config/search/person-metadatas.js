@@ -10,21 +10,20 @@ function PurePersonLine({textFor, ...props}) {
     const code = 0;
     return (
         <div key={code} data-demo='person-line'>
-          Bonjour
-          <div className='level1'>{textFor('fullName', {entityPath: 'person'})}</div>
-
+            Bonjour
+            <div className='level1'>{textFor('fullName', {entityPath: 'person'})}</div>
         </div>
     );
 };
 
 const PersonLine = compose(
-  connectToMetadata(['person']),
-  connectToFieldHelpers()
+    connectToMetadata(['person']),
+    connectToFieldHelpers()
 )(PurePersonLine);
 
 
 export default {
-    LineComponent: props => (<div></div>),
+    LineComponent: props => (<PersonLine {...props} />),
     sortList : [
         'lala',
         'lolo',

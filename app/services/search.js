@@ -3,35 +3,36 @@ import fetch from 'focus-core/network/fetch';
 import commonUrl from '../config/server/common';
 import moviesUrl from '../config/server/movies';
 import personsUrl from '../config/server/persons';
+import lowerCase from 'lodash/lowerCase';
 
 export default {
 
     /**
-     * Target search service call.
-     * (This should the target : search service should be written this way.)
-     *
-     * @param  {object} config search call configuration.
-     * @param  {string} scope  scope search
-     * @return {object}        search response
-     */
+    * Target search service call.
+    * (This should the target : search service should be written this way.)
+    *
+    * @param  {object} config search call configuration.
+    * @param  {string} scope  scope search
+    * @return {object}        search response
+    */
     search(config) {
-        console.log(config)
-        const scope =( config.query && config.query.scope) ? config.query.scope : 'all';
+        const scope = (config.query && config.query.scope) ? config.query.scope : 'all';
         config.urlData = {
-          skip: 0,
-          sortDesc: false,
-          top: 50
+            skip: 0,
+            sortDesc: false,
+            top: 50
         }
         config.data = {
-          scope: scope,
-          facets: {},
-          criteria: ( config.query && config.query.term) ? config.query.term : '*'
+            scope: scope,
+            facets: {},
+            criteria: ( config.query && config.query.term) ? config.query.term : '*'
         }
         config.skip = 0;
         config.top = 0;
-        switch (scope) {
+
+        console.log('--> scope', scope);
+        switch (lowerCase(scope)) {
             case 'movie':
-            
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
                 return fetch(moviesUrl.search(config))
             case 'person':
@@ -39,7 +40,7 @@ export default {
                 return fetch(personsUrl.search(config))
             default:
                 console.log(`[SEARCH ALL] config: ${JSON.stringify(config)}`);
-                return fetch(commonUrl.search(config)).then(data =>{ console.log(data); return data} );
+                return fetch(commonUrl.search(config)).then(data =>{ console.log(data); return data});
         }
     },
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import i18next from 'i18next';
-import ConnectedSearchBarComponent from '../components/connected-search-bar';
+import ConnectedSearchBarComponent from './connected-search-bar';
 
 const HomeHeader = () => (
     <div data-demo='home-header'>

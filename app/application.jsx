@@ -10,9 +10,9 @@ import { Provider as SearchProvider } from 'focus-search/behaviours/search';
 import routes from './router/routes';
 import definitions from './config/entity-definitions';
 import domains from './config/domains';
-import masterdatas from './config/master-datas'
+import masterdatas from './config/master-datas';
+import configSearch from './config/search';
 
-import configSearch from './config/search'
 //to make hot reload work, we have to write Application as a Component.
 class Application extends Component {
     render() {
