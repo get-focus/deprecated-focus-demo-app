@@ -36,29 +36,6 @@ export default {
         home: 'Accueil',
         search: 'Recherche'
     },
-    live: {
-        filter: {
-            title: 'Filtres',
-            facets: {
-                FCT_MOVIE_TITLE: 'Titre',
-                FCT_MOVIE_TYPE: 'Type',
-                FCT_MOVIE_YEAR: 'Année',
-                FCT_PERSON_ACTIVITY: 'Activité',
-                FCT_PERSON_NAME: 'Nom',
-                FCT_PERSON_SEX: 'Sexe',
-                FCT_SCOPE: 'Thème'
-            }
-        }
-    },
-    list: {
-        actionBar: {
-            selection: {
-                all: 'Tout',
-                none: 'Aucun'
-            },
-            ungroup: 'Dégrouper'
-        }
-    },
     result: {
         for: 'résultat pour'
     },

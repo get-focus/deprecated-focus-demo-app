@@ -19,11 +19,11 @@ const listMetadata = (listType, list) => {
 export default {
     getListMetadata: listMetadata,
     scopes: scopes,
-    scopeEntityDefintion: {
-        MovieIndex: {
-            title: {
-                formator: props => props + 'Yo'
-            }
-        }
-    }
+    //scopeEntityDefintion: {
+    //    MovieIndex: {
+    //        title: {
+    //            formator: props => props + 'Yo'
+    //        }
+    //    }
+    //}
 };
