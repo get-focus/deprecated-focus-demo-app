@@ -29,6 +29,7 @@ const MovieLine = compose(
 
 
 export default {
+    lineIdentifierProperty: 'movId',
     LineComponent: props => (<MovieLine {...props} />),
     actionsLine: [
         {label: 'Yo', icon: 'print', action: () => {console.log('action')}},

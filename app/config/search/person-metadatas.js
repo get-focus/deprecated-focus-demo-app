@@ -27,6 +27,7 @@ const PersonLine = compose(
 
 
 export default {
+    lineIdentifierProperty: 'perId',
     LineComponent: props => (<PersonLine {...props} />),
     sortList : [
         'lala',
