@@ -10,9 +10,9 @@ const searchOptions = {
 };
 
 // search bar component
-const SearchBarComponent = ({SearchBarProps: {group, query, scopeFunction, scope, scopes}}) => {
+const SearchBarComponent = ({SearchBarProps: {scopeList, scopes, unitSearchDispatch: {queryAction, scopeAction}}}) => {
     return (
-        <SearchBar group={group} query={query} scopes={scopes} scope={scope} scopeFunction={scopeFunction} />
+        <SearchBar queryAction={queryAction} scopes={scopes} scope={scopeList} scopeAction={scopeAction} />
     );
 }
 

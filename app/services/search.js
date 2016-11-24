@@ -29,18 +29,16 @@ export default {
         }
         config.skip = 0;
         config.top = 0;
-
-        console.log('--> scope', scope);
         switch (lowerCase(scope)) {
             case 'movie':
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
-                return fetch(moviesUrl.search(config))
+                return fetch(moviesUrl.search(config));
             case 'person':
                 console.log(`[SEARCH PERSON] config: ${JSON.stringify(config)}`);
-                return fetch(personsUrl.search(config))
+                return fetch(personsUrl.search(config));
             default:
                 console.log(`[SEARCH ALL] config: ${JSON.stringify(config)}`);
-                return fetch(commonUrl.search(config)).then(data =>{ console.log(data); return data});
+                return fetch(commonUrl.search(config));
         }
     },
 
