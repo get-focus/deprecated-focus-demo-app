@@ -50,8 +50,8 @@ export default {
     GlobalGroupActionsComponent: props => (<GlobalGroupActions {...props} />),
     //ActionsComponent: props => (<Button label={`click sur ${props.movId}`} />),
     actionsLine: [
-        {label: 'Yo', icon: 'print', action: () => {console.log('action')}},
-        {label: 'La', icon: 'print', action: () => {console.log('action')}}
+        {label: 'Yo', icon: 'print', action: props => console.log(props) },
+        {label: 'La', icon: 'print', action: props => props.toggleModal() }
     ],
     sortList : [
         'ouuuuaaa',
