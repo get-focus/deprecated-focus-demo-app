@@ -1,17 +1,19 @@
 import {combineReducers} from 'redux';
-import ranking from './ranking';
-import { identity, biography as person, movieLink } from './person' //TODO : remove as person when pierr will correct the bug
-import movie, {casting as moviePeople} from './movie';
+//import ranking from './ranking';
+//import { identity, biography as person, movieLink } from './person' //TODO : remove as person when pierr will correct the bug
+import {
+    caracteristics as movieCaracteristics,
+    casting as movieCasting,
+    synopsis as movieSynopsis,
+    trailer as movieTrailer
+} from './movie';
 
-export const personMovieLinksSelector = state => state.dataset.movieLink;
-export const rankingSelector = state => state.dataset.ranking;
+// export const personMovieLinksSelector = state => state.dataset.movieLink;
+// export const rankingSelector = state => state.dataset.ranking;
 
 export default combineReducers({
-    //identity,
-    //biography,
-    moviePeople,
-    movie,
-    movieLink, //TODO : to move into person reducers https://github.com/get-focus/focus-graph/issues/52
-    person,
-    ranking
+    movieCaracteristics,
+    movieCasting,
+    movieSynopsis,
+    movieTrailer
 });

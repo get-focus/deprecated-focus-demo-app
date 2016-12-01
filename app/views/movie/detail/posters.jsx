@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react';
 import Panel from 'focus-components/panel';
 
 const MoviePosters = () => (
-    <Panel title='view.movie.detail.posters'>
+    <Panel title='view.movie.detail.posters' Buttons={null}>
         Ici les posters.
     </Panel>
 );

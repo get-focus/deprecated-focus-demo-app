@@ -13,6 +13,18 @@ import domains from './config/domains';
 import masterdatas from './config/master-datas';
 import configSearch from './config/search';
 
+import InputText from 'focus-components/input-text';
+import DisplayComponent from 'focus-components/input-display/text';
+import SelectComponent from 'focus-components/select-mdl';
+import SelectComponentDisplay from 'focus-components/input-display/text';
+
+const FieldHelperProps = {
+    InputComponent: InputText,
+    DisplayComponent: DisplayComponent,
+    SelectComponent: SelectComponent,
+    SelectComponentDisplay: SelectComponentDisplay
+};
+
 //to make hot reload work, we have to write Application as a Component.
 class Application extends Component {
     render() {
@@ -40,66 +52,3 @@ Application.propTypes = {
     store: PropTypes.object.isRequired
 };
 export default Application;
-
-
-const _getListMetadata = (contentType, listData) => {
-    switch (contentType) {
-        case 'MovieIndex':
-            return {
-                LineComponent: props => {
-                    const color = props.isSelected ? 'orange' : 'blue'
-                    return (
-                        <div>
-                            <div>MovieIndex {JSON.stringify(props)}</div>
-                        </div>
-                    )
-                },
-                actionsLine: [
-                    {label: 'Yo', icon: 'print', action: () => {console.log('action')}},
-                    {label: 'La', icon: 'print', action: () => {console.log('action')}}
-
-                ],
-                sortList : [
-                    'ouuuuaaa',
-                    'trrropo',
-                    'lalal'
-                ],
-                groupList: [
-                    'lala',
-                    'lulu',
-                    'lolo'
-                ]
-            };
-            break;
-        case 'PersonIndex':
-            return {
-                LineComponent: props => <div>PersonIndex {JSON.stringify(props)}</div>
-,
-                sortList : [
-                    'lala',
-                    'lolo',
-                    'lulu'
-                ],
-
-                groupList: [
-                    'lala',
-                    'lulu'
-                ]
-            };
-            break;
-        default:
-            return {
-                LineComponent: props => <div>Bien le bonsoir</div>,
-                sortList : [
-                    'ouuuuaaa',
-                    'trrropo',
-                    'lalal'
-                ],
-                groupList: [
-                    'lala',
-                    'lulu',
-                    'lolo'
-                ]
-            };
-    }
-};

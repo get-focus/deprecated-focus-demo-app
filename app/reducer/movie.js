@@ -13,32 +13,30 @@ import {
 // Données initiales pour la state redux
 const DEFAULT_DATA = {};
 
-const caracteristics = reducerBuilder({
-    name: 'movie', //put here the name of the action
+export const caracteristics = reducerBuilder({
+    name: 'movieCaracteristics', //put here the name of the action
     loadTypes: loadCaracteristicsTypes,
     saveTypes: saveCaracteristicsTypes,
     defaultData: DEFAULT_DATA
 });
 
-const synopsis = reducerBuilder({
-    name: 'movie', //put here the name of the action
+export const synopsis = reducerBuilder({
+    name: 'movieSynopsis', //put here the name of the action
     loadTypes: loadSynopsisTypes,
     saveTypes: saveSynopsisTypes,
     defaultData: DEFAULT_DATA
 });
 
-const trailer = reducerBuilder({
-    name: 'movie', //put here the name of the action
+export const trailer = reducerBuilder({
+    name: 'movieTrailer', //put here the name of the action
     loadTypes: loadTrailerTypes,
     saveTypes: loadTrailerTypes, //to correct with issue https://github.com/get-focus/focus-graph/issues/59
     defaultData: DEFAULT_DATA
 });
 
 export const casting = reducerBuilder({
-    name: 'moviePeople', //put here the name of the action
+    name: 'moviePeopleCasting', //put here the name of the action
     loadTypes: loadCastingTypes,
     saveTypes: loadCastingTypes, //to correct with issue https://github.com/get-focus/focus-graph/issues/59
     defaultData: DEFAULT_DATA
 });
-
-export default trailer;

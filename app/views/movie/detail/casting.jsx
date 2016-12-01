@@ -1,5 +1,5 @@
 //librairies
-import React, {PropTypes, Component} from 'react';
+import React, {PropTypes, PureComponent} from 'react';
 import {connect as connectToStore} from 'react-redux';
 import {selectData} from 'focus-graph/store/create-store';
 import i18next from 'i18next';
@@ -14,7 +14,7 @@ import {loadCastingAction} from '../../../action/movie';
 
 
 //TODO : corriger supprimer les warning de check
-class MovieCasting extends Component {
+class MovieCasting extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -93,7 +93,7 @@ class MovieCasting extends Component {
         const list = this._getPeople();
         const tabs = this._getTabs();
         return (
-            <Panel title='view.movie.detail.casting'>
+            <Panel title='view.movie.detail.casting' Buttons={null}>
                 <div data-demo='detail-casting'>
                   <div className='filters-bar'>
                       {tabs.map(peopleType =>
@@ -111,7 +111,7 @@ MovieCasting.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default connectToStore(
-    selectData('moviePeople'),
+    selectData('movieCasting'),
     dispatch => ({
         loadCasting: (id) => dispatch(loadCastingAction(id))
     })

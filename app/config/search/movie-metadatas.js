@@ -4,30 +4,34 @@ import {connect as connectToState} from 'react-redux';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
 import {buildFieldForLineSearch} from 'focus-search/store';
-
+import {withRouter} from 'react-router';
 import Button from 'focus-components/button';
 
-function PureMovieLine({textFor, ...props}) {
-    return (
-        <div key={props.movId} data-demo='movie-line'>
-            <div className='level1'>{props.movId}</div>
-            <div className='level1'>{textFor('title', {entityPath: 'movie'})}</div>
-            <div className='level2'>{textFor('movieType', {entityPath: 'movie'})}</div>
-            <div className='level3'>{textFor('productionYear', {entityPath: 'movie'})}</div>
-        </div>
-    );
+
+class PureMovieLine extends PureComponent {
+    render() {
+        const {movId, textFor, router} = this.props;
+        const route = `movies/${movId}`;
+        return (
+            <div key={movId} data-demo='movie-line' onClick={() => router.push(route)}>
+                <div className='level1'>{textFor('title', {entityPath: 'movieCaracteristics'})}</div>
+                <div className='level2'>{textFor('movieType', {entityPath: 'movieCaracteristics'})}</div>
+                <div className='level3'>{textFor('productionYear', {entityPath: 'movieCaracteristics'})}</div>
+            </div>
+        );
+    }
 };
 
 const MovieLine = compose(
-    connectToMetadata(['movie']),
+    connectToMetadata(['movieCaracteristics']),
     connectToState(buildFieldForLineSearch({
         searchName: 'advancedSearch',
         codeId : 'movId',
-        entityPath: 'movie',
+        entityPath: 'movieCaracteristics',
         code: 'MOVIE'
     })),
     connectToFieldHelpers()
-)(PureMovieLine);
+)(withRouter(PureMovieLine));
 
 class GlobalGroupActions extends PureComponent {
     constructor(props) {

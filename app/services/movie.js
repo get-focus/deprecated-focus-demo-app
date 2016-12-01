@@ -1,17 +1,22 @@
-// import fetch from 'focus-core/network/fetch';
+import fetch from 'focus-core/network/fetch';
 import movieUrl from '../config/server/movies';
-import omit from 'lodash/omit';
 
 export default {
-    loadMovie(id) {
-        console.log(`[MOVIE] call loadMovie(${id}) method`);
-        // return fetch(movieUrl.load({urlData: {id}}), {isCORS: true});
-    },
     loadMovieCasting(id) {
-        console.log(`[MOVIE] call loadMovieCasting(${id}) method`);
-        // return fetch(movieUrl.load({urlData: {id}}), {isCORS: true}).then(({actors, camera, directors, producers, writers}) => {
-        //     return {actors, camera, directors, producers, writers};
-        // });
+        console.log(`[MOVIE] call loadCasting(${id}) method`);
+        return fetch(movieUrl.loadCasting({urlData: {id}}), {isCORS: true});
+    },
+    loadMovieCaracteristics(id) {
+        console.log(`[MOVIE] call loadCaracteristics(${id}) method`);
+        return fetch(movieUrl.loadCaracteristics({urlData: {id}}), {isCORS: true});
+    },
+    loadMovieSynopsis(id) {
+        console.log(`[MOVIE] call loadSynopsis(${id}) method`);
+        return fetch(movieUrl.loadSynopsis({urlData: {id}}), {isCORS: true});
+    },
+    loadMovieTrailer(id) {
+        console.log(`[MOVIE] call loadTrailer(${id}) method`);
+        return fetch(movieUrl.loadTrailer({urlData: {id}}), {isCORS: true});
     },
     updateMovieCaracteristics({movie}) {
         const movieId = movie.code;

@@ -9,9 +9,8 @@ import {compose} from 'redux';
 import {loadSynopsisAction, saveSynopsisAction} from '../../../action/movie';
 
 // web components
-import Panel from '../../components/panel';
-import Form from '../../components/form';
-import PanelDefaultButtons from '../../components/panel/panel-default-buttons';
+import Form from 'focus-components/form';
+import Panel from 'focus-components/panel';
 
 class MovieSynopsis extends PureComponent {
     /** @inheritDoc */
@@ -24,9 +23,9 @@ class MovieSynopsis extends PureComponent {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
         return (
             <Form editing={editing}>
-                <Panel Buttons={PanelDefaultButtons({editing, toggleEdit, getUserInput, save})} title='view.movie.detail.synopsis'>
-                    {fieldFor('synopsis')}
-                    {fieldFor('shortSynopsis')}
+                <Panel title='view.movie.detail.synopsis'>
+                    {fieldFor('synopsis', {entityPath: 'movieSynopsis'})}
+                    {fieldFor('shortSynopsis', {entityPath: 'movieSynopsis'})}
                 </Panel>
             </Form>
         );
@@ -38,10 +37,10 @@ MovieSynopsis.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default compose(
-    connectToMetadata(['movie']),
+    connectToMetadata(['movieSynopsis']),
     connectToForm({
         formKey: 'movieSynopsisForm',
-        entityPathArray: ['movie'],
+        entityPathArray: ['movieSynopsis'],
         loadAction: loadSynopsisAction,
         saveAction: saveSynopsisAction,
         nonValidatedFields: ['movie.actors', 'movie.writers', 'movie.camera', 'movie.producers', 'movie.directors']

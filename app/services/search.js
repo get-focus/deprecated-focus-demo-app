@@ -16,6 +16,7 @@ export default {
     * @return {object}        search response
     */
     search(config) {
+        console.log('config', config);
         const scope = (config.query && config.query.scope) ? config.query.scope : 'all';
         config.urlData = {
             skip: 0,

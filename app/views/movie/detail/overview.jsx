@@ -17,7 +17,7 @@ import i18next from 'i18next';
 
 const MovieOverview = ({loading}) => {
     return (
-        <Panel title='view.movie.detail.overview' data-demo='overview'>
+        <Panel title='view.movie.detail.overview' data-demo='overview' Buttons={null}>
             TODO : a réactiver quand l'issue sur le field sera traitée : https://github.com/get-focus/focus-graph/issues/62
             {/**trailerHRef &&
                 <div>
@@ -35,8 +35,8 @@ const MovieOverview = ({loading}) => {
 MovieOverview.displayName = 'MovieOverview';
 export default compose(
     connectToStore(
-        selectData('movie'), // same thing : (state) => state.dataset.person
+        selectData('movieTrailer'), // same thing : (state) => state.dataset.person
     ),
-    connectToMetadata(['movie']),
+    connectToMetadata(['movieTrailer']),
     connectToFieldHelpers()
 )(MovieOverview);

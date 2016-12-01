@@ -9,7 +9,7 @@ import {compose} from 'redux';
 import {loadTrailerAction} from '../../../action/movie';
 
 // web components
-import Panel from '../../components/panel';
+import Panel from 'focus-components/panel';
 
 class MovieTrailer extends PureComponent {
     /** @inheritDoc */
@@ -22,8 +22,8 @@ class MovieTrailer extends PureComponent {
         const {fieldFor, loading} = this.props;
         return (
             <Panel title='view.movie.detail.trailer'>
-                {fieldFor('trailerName')}
-                {fieldFor('trailerHRef')}
+                {fieldFor('trailerName', {entityPath: 'movieTrailer'})}
+                {fieldFor('trailerHRef', {entityPath: 'movieTrailer'})}
                 <br/>
                 {/** TODO <Trailer url={trailerHRef} />*/}
             </Panel>
@@ -36,10 +36,10 @@ MovieTrailer.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default compose(
-    connectToMetadata(['movie']),
+    connectToMetadata(['movieTrailer']),
     connectToForm({
         formKey: 'movieTrailerForm',
-        entityPathArray: ['movie'],
+        entityPathArray: ['movieTrailer'],
         loadAction: loadTrailerAction,
         nonValidatedFields: ['movie.actors', 'movie.writers', 'movie.camera', 'movie.producers', 'movie.directors']
     }),

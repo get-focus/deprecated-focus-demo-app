@@ -9,9 +9,8 @@ import {compose} from 'redux';
 import {loadBiographyAction, saveBiographyAction} from '../../../action/person';
 
 // web components
-import Panel from '../../components/panel';
-import Form from '../../components/form';
-import PanelDefaultButtons from '../../components/panel/panel-default-buttons';
+import Panel from 'focus-components/panel';
+import Form from 'focus-components/form';
 
 class PersonBiography extends PureComponent {
     componentWillMount() {
@@ -23,7 +22,7 @@ class PersonBiography extends PureComponent {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
         return (
             <Form editing={editing}>
-                <Panel Buttons={PanelDefaultButtons({editing, toggleEdit, getUserInput, save})}  title='view.person.detail.biography'>
+                <Panel title='view.person.detail.biography'>
                     {fieldFor('biography')}
                     {fieldFor('shortBiography')}
                 </Panel>
