@@ -42,8 +42,7 @@ export default compose(
         formKey: 'movieSynopsisForm',
         entityPathArray: ['movieSynopsis'],
         loadAction: loadSynopsisAction,
-        saveAction: saveSynopsisAction,
-        nonValidatedFields: ['movie.actors', 'movie.writers', 'movie.camera', 'movie.producers', 'movie.directors']
+        saveAction: saveSynopsisAction
     }),
     connectToFieldHelpers()
 )(MovieSynopsis);

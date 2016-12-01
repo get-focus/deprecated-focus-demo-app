@@ -28,13 +28,3 @@ export const loadTrailerAction = _loadTrailerAction.action;
 const _loadCastingAction = actionBuilder({names: ['moviePeople'], type:'load', service: movieServices.loadMovieCasting});
 export const loadCastingTypes = _loadCastingAction.types;
 export const loadCastingAction = _loadCastingAction.action;
-
-
-// export const castingActions = {
-//     loadPeople: actionBuilder({
-//         node: 'movieCasting',
-//         service: movieServices.loadMovieCasting,
-//         shouldDumpStoreOnActionCall: true,
-//         status: 'loaded'
-//     })
-// }

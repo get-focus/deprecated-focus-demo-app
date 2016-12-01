@@ -3,7 +3,6 @@
 * @type {Object}
 */
 import country from './country';
-import movie from './movie';
 import movieCaracteristics from './movie-caracteristics';
 import movieLink from './movie-link';
 import moviePeople from './movie-people';

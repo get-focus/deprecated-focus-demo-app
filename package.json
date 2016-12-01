@@ -69,7 +69,7 @@
     "focus-application": "^3.0.0-rc27",
     "focus-components": "^3.0.0-rc52",
     "focus-core": "^2.0.0",
-    "focus-graph": "^3.0.0-beta9",
+    "focus-graph": "^3.0.0-beta11",
     "focus-notifications": "0.2.0-rc6",
     "focus-search": "^3.0.0-beta22",
     "i18next": "3.4.1",

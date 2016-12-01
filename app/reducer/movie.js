@@ -17,14 +17,6 @@ const movieCaracteristics = reducerBuilder({
     loadTypes: loadCaracteristicsTypes,
     saveTypes: saveCaracteristicsTypes,
     defaultData: DEFAULT_DATA
-    // defaultData: {
-    //     'title': 'Unfinished Business',
-    //     'originalTitle': 'Unfinished Business',
-    //     'keywords': '',
-    //     'runtime': 5640,
-    //     'movieType': 'Long-métrage',
-    //     'productionYear': 1941
-    // }
 });
 
 const movieCasting = reducerBuilder({
@@ -51,4 +43,4 @@ export default {
     movieCaracteristics,
     movieSynopsis,
     movieTrailer
-}
+};

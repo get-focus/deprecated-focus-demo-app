@@ -3,7 +3,7 @@ export default {
         domain: 'DO_LABEL_MEDIUM',
         isRequired: false
     },
-    trailerHRef: {
+    trailerHref: {
         domain: 'DO_URL',
         isRequired: false
     }

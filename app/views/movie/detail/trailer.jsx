@@ -23,9 +23,9 @@ class MovieTrailer extends PureComponent {
         return (
             <Panel title='view.movie.detail.trailer'>
                 {fieldFor('trailerName', {entityPath: 'movieTrailer'})}
-                {fieldFor('trailerHRef', {entityPath: 'movieTrailer'})}
+                {fieldFor('trailerHref', {entityPath: 'movieTrailer'})}
                 <br/>
-                {/** TODO <Trailer url={trailerHRef} />*/}
+                {/** TODO <Trailer url={trailerHref} />*/}
             </Panel>
         );
     };
@@ -40,8 +40,7 @@ export default compose(
     connectToForm({
         formKey: 'movieTrailerForm',
         entityPathArray: ['movieTrailer'],
-        loadAction: loadTrailerAction,
-        nonValidatedFields: ['movie.actors', 'movie.writers', 'movie.camera', 'movie.producers', 'movie.directors']
+        loadAction: loadTrailerAction
     }),
     connectToFieldHelpers()
 )(MovieTrailer);

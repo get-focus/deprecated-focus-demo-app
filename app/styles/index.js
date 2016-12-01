@@ -1,7 +1,7 @@
 //--------------------------------------------------------------------------
 //styles from focus-components
 import 'focus-application/style';
-import 'focus-graph/style';
+import 'focus-graph/src/style/field.scss';
 import 'focus-search/style';
 import 'focus-components/style';
 

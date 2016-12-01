@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import i18next from 'i18next';
 import {connect as connectToStore} from 'react-redux';
+import {connect as connectToForm } from 'focus-graph/behaviours/form';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {compose} from 'redux';
@@ -11,9 +12,8 @@ import Poster from '../components/poster';
 
 class MovieHeaderExpanded extends PureComponent {
     render() {
-        console.log(this.props);
         const {data, textFor} = this.props;
-        const {title, poster, trailerHRef} = data;
+        const {title, poster, trailerHref} = data;
         return (
             <div data-demo='header-content-expanded'>
                 <Poster poster={poster} title={title} hasZoom={true} />
@@ -31,9 +31,8 @@ class MovieHeaderExpanded extends PureComponent {
 }
 MovieHeaderExpanded.displayName = 'MovieHeaderExpanded';
 export default compose(
-    connectToStore(
-        selectData('movieCaracteristics', 'movieSynopsis'), // same thing : (state) => state.dataset.movie
-    ),
+    connectToStore(selectData('movieCaracteristics', 'movieSynopsis')), // same thing : (state) => state.dataset.movie
     connectToMetadata(['movieCaracteristics', 'movieSynopsis']),
+    connectToForm({formKey: 'movieHeaderExpandedForm', entityPathArray: ['movieCaracteristics', 'movieSynopsis']}), // to map fields with values
     connectToFieldHelpers()
 )(MovieHeaderExpanded);
