@@ -1,5 +1,4 @@
 import {reducerBuilder} from 'focus-graph/reducers/reducer-builder';
-// import {combineReducers} from 'redux';
 import {
     loadCaracteristicsTypes,
     saveCaracteristicsTypes,
@@ -13,7 +12,7 @@ import {
 // Données initiales pour la state redux
 const DEFAULT_DATA = {};
 
-export const caracteristics = reducerBuilder({
+const movieCaracteristics = reducerBuilder({
     name: 'movieCaracteristics', //put here the name of the action
     loadTypes: loadCaracteristicsTypes,
     saveTypes: saveCaracteristicsTypes,
@@ -28,23 +27,28 @@ export const caracteristics = reducerBuilder({
     // }
 });
 
-export const synopsis = reducerBuilder({
+const movieCasting = reducerBuilder({
+    name: 'movieCasting', //put here the name of the action
+    loadTypes: loadCastingTypes,
+    defaultData: DEFAULT_DATA
+});
+
+const movieSynopsis = reducerBuilder({
     name: 'movieSynopsis', //put here the name of the action
     loadTypes: loadSynopsisTypes,
     saveTypes: saveSynopsisTypes,
     defaultData: DEFAULT_DATA
 });
 
-export const trailer = reducerBuilder({
+const movieTrailer = reducerBuilder({
     name: 'movieTrailer', //put here the name of the action
     loadTypes: loadTrailerTypes,
-    saveTypes: loadTrailerTypes, //to correct with issue https://github.com/get-focus/focus-graph/issues/59
     defaultData: DEFAULT_DATA
 });
 
-export const casting = reducerBuilder({
-    name: 'moviePeopleCasting', //put here the name of the action
-    loadTypes: loadCastingTypes,
-    saveTypes: loadCastingTypes, //to correct with issue https://github.com/get-focus/focus-graph/issues/59
-    defaultData: DEFAULT_DATA
-});
+export default {
+    movieCasting,
+    movieCaracteristics,
+    movieSynopsis,
+    movieTrailer
+}

@@ -10,6 +10,7 @@ import {loadCaracteristicsAction, saveCaracteristicsAction} from '../../../actio
 
 import Form from 'focus-components/form';
 import Panel from 'focus-components/panel';
+import Button from 'focus-components/button';
 
 class MovieCaracteristics extends PureComponent {
     /** @inheritDoc */
@@ -20,10 +21,11 @@ class MovieCaracteristics extends PureComponent {
     /** @inheritDoc */
     render() {
         console.log('MovieCaracteristics', this.props);
-        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
+        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions, load, id} = this.props;
         const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
             <Form editing={editing}>
+                <Button label='test' onClick={() => load(id)} />
                 <Panel title='view.movie.detail.caracteristics' {...panelProps}>
                     {fieldFor('title', {entityPath: 'movieCaracteristics'})}
                     {fieldFor('originalTitle', {entityPath: 'movieCaracteristics'})}
