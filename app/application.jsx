@@ -18,7 +18,7 @@ import DisplayComponent from 'focus-components/input-display/text';
 import SelectComponent from 'focus-components/select-mdl';
 import SelectComponentDisplay from 'focus-components/input-display/text';
 
-const FieldHelperProps = {
+const fieldHelperProps = {
     InputComponent: InputText,
     DisplayComponent: DisplayComponent,
     SelectComponent: SelectComponent,
@@ -32,7 +32,7 @@ class Application extends Component {
         return (
             <StoreProvider store={store}>
                 <MetadataProvider definitions={definitions} domains={domains}>
-                    <FieldHelpersProvider>
+                    <FieldHelpersProvider {...fieldHelperProps}>
                         <MasterdataProvider configuration={masterdatas}>
                             <SearchProvider store={store} searchMetadata={configSearch}>
                                 <Router history={history} routes={routes} />

@@ -21,7 +21,7 @@ class MovieCaracteristics extends PureComponent {
     render() {
         console.log('MovieCaracteristics', this.props);
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
-        const panelProps = {editing, loading, save, saving, toggleEdit};
+        const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
             <Form editing={editing}>
                 <Panel title='view.movie.detail.caracteristics' {...panelProps}>
