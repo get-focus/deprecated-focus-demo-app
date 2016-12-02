@@ -21,13 +21,12 @@ class MovieSynopsis extends PureComponent {
     /** @inheritDoc */
     render() {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
+        const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
-            <Form editing={editing}>
-                <Panel title='view.movie.detail.synopsis'>
-                    {fieldFor('synopsis', {entityPath: 'movieSynopsis'})}
-                    {fieldFor('shortSynopsis', {entityPath: 'movieSynopsis'})}
-                </Panel>
-            </Form>
+            <Panel title='view.movie.detail.synopsis' {...panelProps}>
+                {fieldFor('synopsis', {entityPath: 'movieSynopsis'})}
+                {fieldFor('shortSynopsis', {entityPath: 'movieSynopsis'})}
+            </Panel>
         );
     };
 };

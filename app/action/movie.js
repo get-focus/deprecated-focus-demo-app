@@ -24,6 +24,10 @@ const _loadTrailerAction = actionBuilder({names: ['movieTrailer'], type:'load', 
 export const loadTrailerTypes = _loadTrailerAction.types;
 export const loadTrailerAction = _loadTrailerAction.action;
 
+const _saveTrailerAction = actionBuilder({names: ['movieTrailer'], type:'save', service: movieServices.updateMovieTrailer});
+export const saveTrailerTypes = _saveTrailerAction.types;
+export const saveTrailerAction = _saveTrailerAction.action;
+
 //---------- CASTING
 const _loadCastingAction = actionBuilder({names: ['moviePeople'], type:'load', service: movieServices.loadMovieCasting});
 export const loadCastingTypes = _loadCastingAction.types;

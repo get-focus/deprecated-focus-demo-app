@@ -7,6 +7,7 @@ import {compose} from 'redux';
 
 //actions
 import {loadTrailerAction} from '../../../action/movie';
+import {saveTrailerAction} from '../../../action/movie';
 
 // web components
 import Panel from 'focus-components/panel';
@@ -19,9 +20,10 @@ class MovieTrailer extends PureComponent {
     };
     /** @inheritDoc */
     render() {
-        const {fieldFor, loading} = this.props;
+        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
+        const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
-            <Panel title='view.movie.detail.trailer'>
+            <Panel title='view.movie.detail.trailer' {...panelProps}>
                 {fieldFor('trailerName', {entityPath: 'movieTrailer'})}
                 {fieldFor('trailerHref', {entityPath: 'movieTrailer'})}
                 <br/>
@@ -40,7 +42,8 @@ export default compose(
     connectToForm({
         formKey: 'movieTrailerForm',
         entityPathArray: ['movieTrailer'],
-        loadAction: loadTrailerAction
+        loadAction: loadTrailerAction,
+        saveAction: saveTrailerAction
     }),
     connectToFieldHelpers()
 )(MovieTrailer);

@@ -1,4 +1,8 @@
 export default {
+    movId: {
+        domain: 'DO_ID',
+        isRequired: false
+    },
     keywords: {
         domain: 'DO_LABEL_LONG',
         isRequired: false

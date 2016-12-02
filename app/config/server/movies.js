@@ -1,14 +1,20 @@
 import builder from 'focus-core/util/url/builder';
 import {apiRoot} from './index';
 
-const movieRoot = `${apiRoot}movies/`;
+const movieUrlRoot = `${apiRoot}movies`;
+const movieIdVar = '${id}';
+const skipSearchParam = '${skip}';
+const skipSortParam = '${sortDesc}';
+const skipTopParam = '${top}';
 
 export default {
-    create: builder(movieRoot, 'POST'),
-    loadCaracteristics: builder(movieRoot + '${id}/caract', 'GET'),
-    loadCasting: builder(movieRoot + '${id}/casting', 'GET'),
-    loadSynopsis: builder(movieRoot + '${id}/synopsis', 'GET'),
-    loadTrailer: builder(movieRoot + '${id}/trailer', 'GET'),
-    search: builder(movieRoot + 'search?listState.skip=${skip}&listState.sortDesc=${sortDesc}&listState.top=${top}', 'POST'),
-    update: builder(movieRoot + '${id}', 'PUT')
+    //create: builder(movieUrlRoot, 'POST'),
+    loadCaracteristics: builder(`${movieUrlRoot}/${movieIdVar}/caract`, 'GET'),
+    loadCasting: builder(`${movieUrlRoot}/${movieIdVar}/casting`, 'GET'),
+    loadSynopsis: builder(`${movieUrlRoot}/${movieIdVar}/synopsis`, 'GET'),
+    loadTrailer: builder(`${movieUrlRoot}/${movieIdVar}/trailer`, 'GET'),
+    search: builder(`${movieUrlRoot}/search?listState.skip=${skipSearchParam}&listState.sortDesc=${skipSearchParam}&listState.top=${skipTopParam}`, 'POST'),
+    updateCaracteristics: builder(`${movieUrlRoot}/${movieIdVar}/caract`, 'PUT'),
+    updateSynopsis: builder(`${movieUrlRoot}/${movieIdVar}/synopsis`, 'PUT'),
+    updateTrailer: builder(`${movieUrlRoot}/${movieIdVar}/trailer`, 'PUT')
 };

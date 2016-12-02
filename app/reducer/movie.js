@@ -4,6 +4,7 @@ import {
     saveCaracteristicsTypes,
     loadCastingTypes,
     loadTrailerTypes,
+    saveTrailerTypes,
     loadSynopsisTypes,
     saveSynopsisTypes
 } from '../action/movie';
@@ -35,6 +36,7 @@ const movieSynopsis = reducerBuilder({
 const movieTrailer = reducerBuilder({
     name: 'movieTrailer', //put here the name of the action
     loadTypes: loadTrailerTypes,
+    saveTypes: saveTrailerTypes,
     defaultData: DEFAULT_DATA
 });
 
