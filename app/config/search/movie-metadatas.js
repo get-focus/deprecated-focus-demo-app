@@ -7,7 +7,6 @@ import {buildFieldForLineSearch} from 'focus-search/store';
 import {withRouter} from 'react-router';
 import Button from 'focus-components/button';
 
-
 class PureMovieLine extends PureComponent {
     render() {
         const {movId, textFor, router} = this.props;

@@ -31,6 +31,8 @@ export default {
         config.top = 0;
         switch (lowerCase(scope)) {
             case 'movie':
+                config['sortFieldName'] = 'title';
+                config['sortDesc'] = true;
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
                 return fetch(moviesUrl.search(config));
             case 'person':

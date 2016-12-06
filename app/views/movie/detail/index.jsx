@@ -24,7 +24,7 @@ class MovieDetailView extends PureComponent {
         const {id} = this.props;
         return (
             <ScrollspyContainer>
-                <Overview />
+                <Overview id={id} />
                 <Caracteristics id={id} />
                 <Synopsis id={id} />
                 <Trailer id={id} />
