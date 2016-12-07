@@ -1,7 +1,7 @@
 import React from 'react';
 import compose from 'lodash/flowRight';
 import {connect as connectToSearch} from 'focus-search/behaviours/search';
-import {SearchBar} from 'focus-search/components/searchbar';
+import SearchBar from 'focus-search/components/searchbar';
 import {unitSearchActions} from '../../../action/search';
 
 const searchOptions = {
@@ -10,9 +10,9 @@ const searchOptions = {
 };
 
 // search bar component
-const SearchBarComponent = ({SearchBarProps: {scopeList, scopes, unitSearchDispatch: {queryAction, scopeAction}}}) => {
+const SearchBarComponent = ({SearchBarProps: {scope, scopes, unitSearchDispatch: {queryAction, scopeAction}}}) => {
     return (
-        <SearchBar queryAction={queryAction} scopes={scopes} scope={scopeList} scopeAction={scopeAction} />
+        <SearchBar queryAction={queryAction} scopes={scopes} scope={scope} scopeAction={scopeAction} />
     );
 }
 

@@ -1,9 +1,11 @@
 import fetch from 'focus-core/network/fetch';
+import lowerCase from 'lodash/lowerCase';
+import {get} from 'lodash';
+import {parseForVertigo} from 'focus-search/store';
 
 import commonUrl from '../config/server/common';
 import moviesUrl from '../config/server/movies';
 import personsUrl from '../config/server/persons';
-import lowerCase from 'lodash/lowerCase';
 
 export default {
 
@@ -16,31 +18,25 @@ export default {
     * @return {object}        search response
     */
     search(config) {
-        const scope = (config.query && config.query.scope) ? config.query.scope : 'all';
-        config.urlData = {
-            skip: 0,
-            sortDesc: false,
-            top: 50
-        }
-        config.data = {
-            scope: scope,
-            facets: {},
-            criteria: ( config.query && config.query.term) ? config.query.term : '*'
-        }
-        config.skip = 0;
-        config.top = 0;
-        switch (lowerCase(scope)) {
+        const scope = get(config, 'query.scope', 'all');
+        const configVertigo = parseForVertigo(config);
+        const sortFieldName = get(configVertigo, 'urlData.sortFieldName');
+        switch (scope) {
             case 'movie':
-                config['sortFieldName'] = 'title';
-                config['sortDesc'] = true;
-                console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
-                return fetch(moviesUrl.search(config));
+                if(!sortFieldName) {
+                    configVertigo.urlData.sortFieldName = 'TITLE';
+                }
+                console.log(`[SEARCH MOVIE] config: ${JSON.stringify(configVertigo)}`);
+                return fetch(moviesUrl.search(configVertigo));
             case 'person':
-                console.log(`[SEARCH PERSON] config: ${JSON.stringify(config)}`);
-                return fetch(personsUrl.search(config));
+                if(!sortFieldName) {
+                    configVertigo.urlData.sortFieldName = 'FULL_NAME';
+                }
+                console.log(`[SEARCH PERSON] config: ${JSON.stringify(configVertigo)}`);
+                return fetch(personsUrl.search(configVertigo));
             default:
-                console.log(`[SEARCH ALL] config: ${JSON.stringify(config)}`);
-                return fetch(commonUrl.search(config));
+                console.log(`[SEARCH ALL] config: ${JSON.stringify(configVertigo)}`);
+                return fetch(commonUrl.search(configVertigo));
         }
     },
 

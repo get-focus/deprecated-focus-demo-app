@@ -23,7 +23,6 @@ class MovieHeaderExpanded extends PureComponent {
                     <h5>{textFor('movieType', {entityPath: 'movieCaracteristics'})}</h5>
                     <h6>{textFor('productionYear', {entityPath: 'movieCaracteristics'})}</h6>
                     <div>{textFor('shortSynopsis', {entityPath: 'movieSynopsis'})}</div>
-                    TODO : a terminer quand l'issue sur le textfor sera traitée.
                 </div>
             </div>
         );

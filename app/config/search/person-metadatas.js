@@ -29,13 +29,22 @@ const PersonLine = compose(
 export default {
     lineIdentifierProperty: 'perId',
     LineComponent: props => (<PersonLine {...props} />),
+    sortDefaultValue: 'fullName',
     sortList : [
-        'lala',
-        'lolo',
-        'lulu'
+        'ACTIVITY',
+        'BIOGRAPHY',
+        'FULL_NAME_SORT_ONLY',
+        'SEX',
+        'BIRTH_DATE',
+        'FULL_NAME',
+        'BIRTH_PLACE'
     ],
     groupList: [
-        'lala',
-        'lulu'
+        'FCT_MOVIE_TYPE',
+        'FCT_MOVIE_TITLE',
+        'FCT_MOVIE_YEAR',
+        'FCT_PERSON_ACTIVITY',
+        'FCT_PERSON_NAME',
+        'FCT_PERSON_SEX'
     ]
 };
