@@ -40,9 +40,6 @@ export default {
         'BIRTH_PLACE'
     ],
     groupList: [
-        'FCT_MOVIE_TYPE',
-        'FCT_MOVIE_TITLE',
-        'FCT_MOVIE_YEAR',
         'FCT_PERSON_ACTIVITY',
         'FCT_PERSON_NAME',
         'FCT_PERSON_SEX'

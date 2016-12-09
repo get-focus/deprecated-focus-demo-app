@@ -5,8 +5,6 @@ import SearchHeader from '../components/search/header';
 import DemoTitle from '../components/demo-title';
 import {connect as connectToHeader} from 'focus-application/behaviours/header';
 import Panel from 'focus-components/panel';
-import Button from 'focus-components/button';
-import {Link} from 'react-router';
 
 
 class Home extends PureComponent {

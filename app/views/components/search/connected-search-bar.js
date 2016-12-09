@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import compose from 'lodash/flowRight';
 import {connect as connectToSearch} from 'focus-search/behaviours/search';
 import SearchBar from 'focus-search/components/searchbar';
@@ -10,11 +10,14 @@ const searchOptions = {
 };
 
 // search bar component
-const SearchBarComponent = ({SearchBarProps: {scope, scopes, unitSearchDispatch: {queryAction, scopeAction}}}) => {
-    return (
-        <SearchBar queryAction={queryAction} scopes={scopes} scope={scope} scopeAction={scopeAction} />
-    );
-}
+class SearchBarComponent extends PureComponent {
+    render() {
+        const {SearchBarProps: {scope, scopes, term, unitSearchDispatch: {queryAction, scopeAction}}} = this.props;
+        return (
+            <SearchBar queryAction={queryAction} scopes={scopes} scope={scope} scopeAction={scopeAction} term={term} />
+        );
+    };
+};
 
 // search bar component connected to search store
 const ConnectedSearchBarComponent = compose(

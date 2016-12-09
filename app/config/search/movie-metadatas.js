@@ -57,13 +57,20 @@ export default {
         {label: 'La', icon: 'print', action: props => props.toggleModal() }
     ],
     sortList : [
-        'ouuuuaaa',
-        'trrropo',
-        'lalal'
+        'PRESS_RATING',
+        'ORIGINAL_TITLE',
+        'MOVIE_TYPE',
+        'PRODUCTION_YEAR',
+        'SHORT_SYNOPSIS',
+        'SYNOPSIS',
+        'RUNTIME',
+        'TITLE',
+        'TITLE_SORT_ONLY',
+        'USER_RATING'
     ],
     groupList: [
-        'lala',
-        'lulu',
-        'lolo'
+        'FCT_MOVIE_TYPE',
+        'FCT_MOVIE_TITLE',
+        'FCT_MOVIE_YEAR'
     ]
 };
