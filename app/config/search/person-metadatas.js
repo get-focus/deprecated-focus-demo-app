@@ -32,11 +32,8 @@ export default {
     sortDefaultValue: 'fullName',
     sortList : [
         'ACTIVITY',
-        'BIOGRAPHY',
         'FULL_NAME_SORT_ONLY',
-        'SEX',
         'BIRTH_DATE',
-        'FULL_NAME',
         'BIRTH_PLACE'
     ],
     groupList: [

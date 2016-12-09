@@ -57,15 +57,10 @@ export default {
         {label: 'La', icon: 'print', action: props => props.toggleModal() }
     ],
     sortList : [
-        'PRESS_RATING',
-        'ORIGINAL_TITLE',
-        'MOVIE_TYPE',
-        'PRODUCTION_YEAR',
-        'SHORT_SYNOPSIS',
-        'SYNOPSIS',
-        'RUNTIME',
-        'TITLE',
         'TITLE_SORT_ONLY',
+        'PRODUCTION_YEAR',
+        'RUNTIME',
+        'PRESS_RATING',
         'USER_RATING'
     ],
     groupList: [

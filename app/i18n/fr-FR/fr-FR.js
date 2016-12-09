@@ -56,9 +56,59 @@ export default {
             all: 'Tout voir',
             more: 'Voir plus'
         },
+        sort: {
+            movie: {
+                titleSortOnly: {
+                    asc: 'Titre croissant',
+                    desc: 'Titre décroissant'
+                },
+                productionYear: {
+                    asc: 'Année croissante',
+                    desc: 'Année décroissante'
+                },
+                runtime: {
+                    asc: 'Durée croissante',
+                    desc: 'Durée décroissante'
+                },
+                pressRating: {
+                    asc: 'Note de la presse croissante',
+                    desc: 'Note de la presse décroissante'
+                },
+                userRating: {
+                    asc: 'Note des spectateurs croissante',
+                    desc: 'Note des spectateurs décroissante',
+                },
+            },
+            person: {
+                activity: {
+                    asc: 'Activité croissant',
+                    desc: 'Activité décroissant'
+                },
+                fullNameSort: {
+                    asc: 'Nom complet croissant',
+                    desc: 'Activité décroissant'
+                },
+                birthDate: {
+                    asc: 'Date de naissance croissante',
+                    desc: 'Activité décroissante'
+                },
+                birthPlace: {
+                    asc: 'Lieu de naissance croissant',
+                    desc: 'Lieu de naissance décroissant'
+                }
+            }
+        },
         group: {
-            movie: 'Film',
-            person: 'Personne'
+            movie: {
+                fctMovieType: 'Type',
+                fctMovieTitle: 'Titre',
+                fctMovieYear: 'Année'
+            },
+            person: {
+                fctPersonActivity: 'Activité',
+                fctPersonName: 'Nom',
+                fctPersonSex: 'Genre',
+            }
         },
         scope: {
             all: 'Tout',
