@@ -1,66 +1,71 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, PureComponent} from 'react';
 import {compose} from 'redux';
 import {connect as connectToState} from 'react-redux';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
-import {selectFieldsByFormKey} from 'focus-graph/store/create-store';
+import {buildFieldForLineSearch} from 'focus-search/store';
+import {withRouter} from 'react-router';
+import Button from 'focus-components/button';
 
-import get from 'lodash/get';
-import identity from 'lodash/identity'
-
-export const buildFieldForLineSearch = ({searchName, codeId, entityPath, code} ) => (state ={}, props) => {
-  const {definitions, domains} = props;
-  const entityDefintion = definitions[entityPath];
-  const results = state[searchName].results;
-  const list = results.data[0].list ? results.data[0].list  : results.data
-  return {fields: Object.keys(list.find(element => element[codeId] ===props[codeId])).map(element => {
-    const propertyDefinition = entityDefintion[element]
-    const domain = get(domains, propertyDefinition ? propertyDefinition.domain : "", {})
-    const value = list.find(element => element[codeId] ===props[codeId])[element]
-    const formator = domain.formator || identity
-    return {entityPath: 'movie', label: 'title', name: element,  formattedInputValue: formator(value)}}  )}
-}
-
-
-function PureMovieLine ({textFor, ...props}) {
-    const code = 0;
-    return (
-        <div key={code} data-demo='movie-line'>
-          <div className='level1'>{textFor('title', {entityPath: 'movie'})}</div>
-          <div className='level2'>{textFor('movieType', {entityPath: 'movie'})}</div>
-          <div className='level3'>{textFor('productionYear', {entityPath: 'movie'})}</div>
-        </div>
-    );
+class PureMovieLine extends PureComponent {
+    render() {
+        const {movId, textFor, router} = this.props;
+        const route = `movies/${movId}`;
+        return (
+            <div key={movId} data-demo='movie-line' onClick={() => router.push(route)}>
+                <div className='level1'>{textFor('title', {entityPath: 'movieCaracteristics'})}</div>
+                <div className='level2'>{textFor('movieType', {entityPath: 'movieCaracteristics'})}</div>
+                <div className='level3'>{textFor('productionYear', {entityPath: 'movieCaracteristics'})}</div>
+            </div>
+        );
+    }
 };
 
-const config = {
-  searchName: 'advancedSearch',
-  codeId : 'movId',
-  entityPath: 'movie',
-  code: 'MOVIE'
-}
-
 const MovieLine = compose(
-  connectToMetadata(['movie']),
-  connectToState(buildFieldForLineSearch(config)),
-  connectToFieldHelpers()
-)(PureMovieLine);
+    connectToMetadata(['movieCaracteristics']),
+    connectToState(buildFieldForLineSearch({
+        searchName: 'advancedSearch',
+        codeId : 'movId',
+        entityPath: 'movieCaracteristics',
+        code: 'MOVIE'
+    })),
+    connectToFieldHelpers()
+)(withRouter(PureMovieLine));
 
+class GlobalGroupActions extends PureComponent {
+    constructor(props) {
+        super(props);
+        this._onClickAction = this._onClickAction.bind(this);
+    }
+    _onClickAction(evt) {
+        console.log('actions globales', this.props);
+    }
+    render() {
+        return (
+            <Button label="Actions globales Movies" onClick={this._onClickAction} />
+        );
+    }
+};
 
 export default {
+    lineIdentifierProperty: 'movId',
     LineComponent: props => (<MovieLine {...props} />),
+    GlobalGroupActionsComponent: props => (<GlobalGroupActions {...props} />),
+    //ActionsComponent: props => (<Button label={`click sur ${props.movId}`} />),
     actionsLine: [
-        {label: 'Yo', icon: 'print', action: () => {console.log('action')}},
-        {label: 'La', icon: 'print', action: () => {console.log('action')}}
+        {label: 'Yo', icon: 'print', action: props => console.log(props) },
+        {label: 'La', icon: 'print', action: props => props.toggleModal() }
     ],
     sortList : [
-        'ouuuuaaa',
-        'trrropo',
-        'lalal'
+        'TITLE_SORT_ONLY',
+        'PRODUCTION_YEAR',
+        'RUNTIME',
+        'PRESS_RATING',
+        'USER_RATING'
     ],
     groupList: [
-        'lala',
-        'lulu',
-        'lolo'
+        'FCT_MOVIE_TYPE',
+        'FCT_MOVIE_TITLE',
+        'FCT_MOVIE_YEAR'
     ]
 };

@@ -10,9 +10,8 @@ import {compose} from 'redux';
 import {loadIdentityAction, saveIdentityAction} from '../../../action/person';
 
 // web components
-import Panel from '../../components/panel';
-import Form from '../../components/form';
-import PanelDefaultButtons from '../../components/panel/panel-default-buttons';
+import Panel from 'focus-components/panel';
+import Form from 'focus-components/form';
 
 
 class PersonIdentity extends PureComponent {
@@ -26,7 +25,7 @@ class PersonIdentity extends PureComponent {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
         return (
             <Form editing={editing}>
-                <Panel Buttons={PanelDefaultButtons({editing, toggleEdit, getUserInput, save})} title='view.person.detail.identity'>
+                <Panel title='view.person.detail.identity'>
                     {fieldFor('fullName')}
                     {fieldFor('firstName')}
                     {selectFor('sex', {masterDatum: 'genders'})}

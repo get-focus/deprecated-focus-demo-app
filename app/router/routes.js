@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import AppLayout from '../components/layout'
+import AppLayout from '../views/components/layout'
 import HomeRoute from './home-route';
 import MasterdataRoutes from './masterdata-routes';
 import MoviesRoutes from './movies-route';

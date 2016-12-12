@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+
+
+[data-focus="list-component"] {
+    [data-focus="line-component"] {
+        .level1 {
+            font-size: 15px;
+            color: $accent-color;
+        }
+        .level2 {
+            font-size: 13px;
+            color: $primary-text-color
+        }
+        .level3 {
+            font-size: 13px;
+            color: $secondary-text-color;
+        }
+    }
+}

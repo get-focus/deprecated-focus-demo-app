@@ -14,7 +14,12 @@ import {component as Modal} from 'focus-components/modal';
 const menus = [
     { icon: 'home', label: 'menu.home', route: '/' }, // route: 'home'
     { icon: 'search', label: 'menu.search', handleOnClick: () => { /*this._onQuickSearchModalToggle()*/ }},
-    { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'}
+    { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata', subMenus: [
+        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'},
+        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'},
+        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'},
+        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'}
+    ]}
 ];
 
 class MenuDemo extends Component {

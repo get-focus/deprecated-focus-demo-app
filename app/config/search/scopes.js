@@ -2,17 +2,17 @@
 export default [
     {
         value: 'all',
-        label: 'All',
-        selected:true
+        label: 'search.scope.all',
+        selected: true
     },
     {
         value: 'movie',
-        label: 'Films',
+        label: 'search.scope.movie',
         selected: false
     },
     {
         value: 'person',
-        label: 'Acteurs',
+        label: 'search.scope.person',
         selected: false
     }
 ];

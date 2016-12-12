@@ -16,7 +16,7 @@ import SnackBar from 'focus-components/snackbar';
 
 import Menu from '../menu';
 import Footer from '../footer';
-import DevTools from '../../tools/dev-tools';
+import DevTools from '../../../tools/dev-tools';
 
 //connected components
 const ConnectedScrollTrigger = connectToStore(headerIsExpandedSelector,{expandHeader, unExpandHeader})(ScrollTrigger);

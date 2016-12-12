@@ -4,8 +4,6 @@ import movieMetadatas from './movie-metadatas';
 import personMetadatas from './person-metadatas';
 import scopes from './scopes';
 
-
-
 const listMetadata = (listType, list) => {
     switch (listType) {
         case 'MovieIndex':
@@ -21,11 +19,11 @@ const listMetadata = (listType, list) => {
 export default {
     getListMetadata: listMetadata,
     scopes: scopes,
-    scopeEntityDefintion: {
-      MovieIndex: {
-        title: {
-          formator: props => props + 'Yo'
-        }
-      }
-    }
+    //scopeEntityDefintion: {
+    //    MovieIndex: {
+    //        title: {
+    //            formator: props => props + 'Yo'
+    //        }
+    //    }
+    //}
 };

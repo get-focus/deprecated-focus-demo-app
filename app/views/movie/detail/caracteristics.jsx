@@ -1,17 +1,11 @@
-//librairies
 import React, {PropTypes, PureComponent} from 'react';
 import {connect as connectToForm } from 'focus-graph/behaviours/form';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {compose} from 'redux';
+import Panel from 'focus-components/panel';
 
-//actions
 import {loadCaracteristicsAction, saveCaracteristicsAction} from '../../../action/movie';
-
-// web components
-import Panel from '../../components/panel';
-import Form from '../../components/form';
-import PanelDefaultButtons from '../../components/panel/panel-default-buttons';
 
 class MovieCaracteristics extends PureComponent {
     /** @inheritDoc */
@@ -21,34 +15,31 @@ class MovieCaracteristics extends PureComponent {
     }
     /** @inheritDoc */
     render() {
-        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
+        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions, id} = this.props;
+        const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
-            <Form editing={editing}>
-                <Panel Buttons={PanelDefaultButtons({editing, toggleEdit, getUserInput, save})} title='view.movie.detail.caracteristics'>
-                    {fieldFor('title')}
-                    {fieldFor('originalTitle')}
-                    {fieldFor('keywords')}
-                    {fieldFor('runtime')}
-                    {fieldFor('movieType')}
-                    {fieldFor('productionYear')}
-                </Panel>
-            </Form>
+            <Panel title='view.movie.detail.caracteristics' {...panelProps}>
+                {fieldFor('title', {entityPath: 'movieCaracteristics'})}
+                {fieldFor('originalTitle', {entityPath: 'movieCaracteristics'})}
+                {fieldFor('keywords', {entityPath: 'movieCaracteristics'})}
+                {fieldFor('runtime', {entityPath: 'movieCaracteristics'})}
+                {fieldFor('movieType', {entityPath: 'movieCaracteristics'})}
+                {fieldFor('productionYear', {entityPath: 'movieCaracteristics'})}
+            </Panel>
         );
     }
 };
-
 MovieCaracteristics.displayName = 'MovieCaracteristics';
 MovieCaracteristics.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default compose(
-    connectToMetadata(['movie']),
+    connectToMetadata(['movieCaracteristics']),
     connectToForm({
         formKey: 'movieCaracteristicsForm',
-        entityPathArray: ['movie'],
+        entityPathArray: ['movieCaracteristics'],
         loadAction: loadCaracteristicsAction,
-        saveAction: saveCaracteristicsAction,
-        nonValidatedFields: ['movie.actors', 'movie.writers', 'movie.camera', 'movie.producers', 'movie.directors']
+        saveAction: saveCaracteristicsAction
     }),
     connectToFieldHelpers()
 )(MovieCaracteristics);

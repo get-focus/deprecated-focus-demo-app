@@ -7,9 +7,10 @@ import {compose} from 'redux';
 
 //actions
 import {loadTrailerAction} from '../../../action/movie';
+import {saveTrailerAction} from '../../../action/movie';
 
 // web components
-import Panel from '../../components/panel';
+import Panel from 'focus-components/panel';
 
 class MovieTrailer extends PureComponent {
     /** @inheritDoc */
@@ -19,13 +20,14 @@ class MovieTrailer extends PureComponent {
     };
     /** @inheritDoc */
     render() {
-        const {fieldFor, loading} = this.props;
+        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
+        const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
-            <Panel title='view.movie.detail.trailer'>
-                {fieldFor('trailerName')}
-                {fieldFor('trailerHRef')}
+            <Panel title='view.movie.detail.trailer' {...panelProps}>
+                {fieldFor('trailerName', {entityPath: 'movieTrailer'})}
+                {fieldFor('trailerHref', {entityPath: 'movieTrailer'})}
                 <br/>
-                {/** TODO <Trailer url={trailerHRef} />*/}
+                {/** TODO <Trailer url={trailerHref} />*/}
             </Panel>
         );
     };
@@ -36,12 +38,12 @@ MovieTrailer.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default compose(
-    connectToMetadata(['movie']),
+    connectToMetadata(['movieTrailer']),
     connectToForm({
         formKey: 'movieTrailerForm',
-        entityPathArray: ['movie'],
+        entityPathArray: ['movieTrailer'],
         loadAction: loadTrailerAction,
-        nonValidatedFields: ['movie.actors', 'movie.writers', 'movie.camera', 'movie.producers', 'movie.directors']
+        saveAction: saveTrailerAction
     }),
     connectToFieldHelpers()
 )(MovieTrailer);

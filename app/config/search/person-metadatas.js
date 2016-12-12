@@ -3,35 +3,42 @@ import {compose} from 'redux';
 import {connect as connectToState} from 'react-redux';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
-import {selectFieldsByFormKey} from 'focus-graph/store/create-store';
+import {buildFieldForLineSearch} from 'focus-search/store';
 
 
-function PurePersonLine({textFor, ...props}) {
-    const code = 0;
+function PurePersonLine({textFor, perId, ...props}) {
     return (
-        <div key={code} data-demo='person-line'>
-          Bonjour
-          <div className='level1'>{textFor('fullName', {entityPath: 'person'})}</div>
-
+        <div key={perId} data-demo='person-line'>
+            <div className='level1'>{textFor('fullName', {entityPath: 'person'})}</div>
         </div>
     );
 };
 
 const PersonLine = compose(
-  connectToMetadata(['person']),
-  connectToFieldHelpers()
+    connectToMetadata(['person']),
+    connectToState(buildFieldForLineSearch({
+        searchName: 'advancedSearch',
+        codeId : 'perId',
+        entityPath: 'person',
+        code: 'PERSON'
+    })),
+    connectToFieldHelpers()
 )(PurePersonLine);
 
 
 export default {
-    LineComponent: props => (<div></div>),
+    lineIdentifierProperty: 'perId',
+    LineComponent: props => (<PersonLine {...props} />),
+    sortDefaultValue: 'fullName',
     sortList : [
-        'lala',
-        'lolo',
-        'lulu'
+        'ACTIVITY',
+        'FULL_NAME_SORT_ONLY',
+        'BIRTH_DATE',
+        'BIRTH_PLACE'
     ],
     groupList: [
-        'lala',
-        'lulu'
+        'FCT_PERSON_ACTIVITY',
+        'FCT_PERSON_NAME',
+        'FCT_PERSON_SEX'
     ]
 };

@@ -8,12 +8,15 @@ import {search as serviceSearch} from '../services/search';
 //advanced_search
 export const searchAction = actionSearchBuilder({name: 'advancedSearch', type: 'search', service: serviceSearch});
 export const {creators : unitSearchActions, types : unitSearchActionsTypes} = singleActionCreatorBuilder('advancedSearch');
-export const unitSearchReducers = unitSearchReducerBuilder('advancedSearch')
-export const middlewareAdvancedSearch = searchTriggerMiddlewareBuilder(['ADVANCEDSEARCH_UPDATE_QUERY', 'ADVANCEDSEARCH_UPDATE_SELECTED_FACETS', 'ADVANCEDSEARCH_START_SEARCH'], state => state.advancedSearch, searchAction.action);
-
-
-
-// export const otherSearchAction = actionSearchBuilder({name: 'other_search', type: 'search', service: serviceSearch});
-// export const {creators : unitOtherSearchActions, types : unitOtherSearchTypes} = singleActionCreatorBuilder('advanced_search');
-// export const unitOtherSearchReducers = unitSearchReducerBuilder('other_search')
-// export const middlewareOtherSearch = searchTriggerMiddlewareBuilder(otherSearchAction.action, unitOtherSearchTypes);
+export const unitSearchReducers = unitSearchReducerBuilder('advancedSearch');
+export const middlewareAdvancedSearch = searchTriggerMiddlewareBuilder(
+    [
+        'ADVANCEDSEARCH_UPDATE_QUERY',
+        'ADVANCEDSEARCH_UPDATE_SELECTED_FACETS',
+        'ADVANCEDSEARCH_UPDATE_SORT',
+        'ADVANCEDSEARCH_UPDATE_GROUP',
+        'ADVANCEDSEARCH_START_SEARCH'
+    ],
+    state => state.advancedSearch,
+    searchAction.action
+);

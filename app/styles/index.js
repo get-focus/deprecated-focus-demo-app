@@ -1,11 +1,12 @@
 //--------------------------------------------------------------------------
 //styles from focus-components
-import 'focus-components/style';
 import 'focus-application/style';
+import 'focus-graph/src/style/field.scss';
 import 'focus-search/style';
+import 'focus-components/style';
 
 //import 'material-design-lite/material.css';
-import 'material-design-icons-iconfont/dist/material-design-icons.scss';
+//import 'material-design-icons-iconfont/dist/material-design-icons.scss';
 
 //--------------------------------------------------------------------------
 //styles from demo
@@ -23,6 +24,7 @@ import './home.scss';
 import './home-header.scss';
 import './list-action-bar.scss';
 import './list-summary.scss';
+import './list-component.scss';
 import './masterdata.scss';
 import './material-card.scss';
 import './menu-left.scss';
@@ -33,7 +35,6 @@ import './poster.scss';
 import './preview.scss';
 import './quick-search.scss';
 import './scrollspy-container.scss';
-import './selection-list.scss';
 import './trailer.scss';
 
 //Style for print
