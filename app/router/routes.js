@@ -5,7 +5,7 @@ import HomeRoute from './home-route';
 import MasterdataRoutes from './masterdata-routes';
 import MoviesRoutes from './movies-route';
 import PersonsRoutes from './persons-route';
-import SearchRoutes from './advanced-search-route';
+import SearchRoutes from './search-route';
 import ErrorRoutes from './error-route';
 
 export default {
