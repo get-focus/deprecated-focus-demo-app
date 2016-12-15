@@ -18,7 +18,8 @@ class AdvancedSearchView extends PureComponent {
 const AdvancedSearchViewExtended = compose(
     connectToHeader({
         ExpandedHeaderComponent: SearchHeader,
-        SummaryHeaderComponent: SearchHeader
+        SummaryHeaderComponent: SearchHeader,
+        LeftHeaderComponent: DemoTitle
     })
 )(AdvancedSearchView);
 export default AdvancedSearchViewExtended;
