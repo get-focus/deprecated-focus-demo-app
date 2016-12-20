@@ -11,6 +11,7 @@ export const {creators : unitSearchActions, types : unitSearchActionsTypes} = si
 export const unitSearchReducers = unitSearchReducerBuilder('advancedSearch');
 export const middlewareAdvancedSearch = searchTriggerMiddlewareBuilder(
     [
+        'ADVANCEDSEARCH_NEXT_PAGE',
         'ADVANCEDSEARCH_UPDATE_QUERY',
         'ADVANCEDSEARCH_UPDATE_SELECTED_FACETS',
         'ADVANCEDSEARCH_UPDATE_SORT',

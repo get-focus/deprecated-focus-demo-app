@@ -8,12 +8,10 @@ import Panel from 'focus-components/panel';
 import {loadCaracteristicsAction, saveCaracteristicsAction} from '../../../action/movie';
 
 class MovieCaracteristics extends PureComponent {
-    /** @inheritDoc */
     componentWillMount() {
         const {id, load} = this.props;
         load(id);
     }
-    /** @inheritDoc */
     render() {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions, id} = this.props;
         const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};

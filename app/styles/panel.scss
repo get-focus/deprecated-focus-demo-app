@@ -2,45 +2,51 @@
 
 $panel-padding-sides:20px;
 
-[data-mode="edit"] {
-    [data-focus='panel'] {
-        border: 3px solid $primary-color-light;
+@-webkit-keyframes running-progress {
+    0% { margin-left: 0px; margin-right: 100%; }
+    50% { margin-left: 25%; margin-right: 0%; }
+    100% { margin-left: 100%; margin-right: 0; }
+}
+@keyframes running-progress {
+    0% { margin-left: 0px; margin-right: 100%; }
+    50% { margin-left: 25%; margin-right: 0%; }
+    100% { margin-left: 100%; margin-right: 0; }
+}
+
+@mixin busy {
+    &::after {
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        right:0;
+        bottom: 0;
+        background-color: transparent;
+    }
+    [data-focus="panel-content"] {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top:0;
+            left: 0;
+            right:0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.73);
+        }
     }
 }
 
 [data-focus='panel'] {
+    border: 0;
     [data-focus='panel-title'] {
-        h1,h2,h3,h4 {
-            color:$primary-color;
-            font-size: 30px; //temporary, to remove with focus-component 0.15.0
-        }
+        display: flex;
+        justify-content:space-between;
     }
-    &[data-demo="overview"] {
-        background-color: $primary-color-light;
-        [data-focus="button-action"] {
-            background-color: $accent-color;
-            color: $primary-color-text;
-        }
+    &[data-loading='true'] {
+        @include busy;
     }
-    [data-focus="panel-content"] {
-        position: relative;
-        //padding-top: 80px;
-        .filters-bar {
-            width: calc(100% + #{$panel-padding-sides * 2});
-            text-align: center;
-            background-color: $accent-color;
-            padding-top: 20px;
-            position: relative;
-            margin-top: -15px;
-            margin-bottom: 20px;
-            margin-left: -$panel-padding-sides;
-            [data-focus='button-action']{
-                color:$primary-color-text;
-                &[data-active="true"]{
-                    border-bottom: 3px solid $primary-color-text;
-                    background-color: rgba(255,255,255, 0.12);
-                }
-            }
-        }
+    &[data-saving='true'] {
+        @include busy;
     }
 }

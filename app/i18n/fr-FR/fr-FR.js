@@ -50,12 +50,23 @@ export default {
             title: 'Vous recherchez ?'
         },
         empty: 'Désolé, aucun résultat n\'a été trouvé',
+        facets: {
+            items: {
+                cluster: 'Scopes',
+                'Par type': 'Par type',
+                'Par titre': 'Par titre',
+                'Par date': 'Par date',
+                'Par activité': 'Par activité',
+                'Par Nom': 'Par nom',
+                'Par sexe': 'Par sexe'
+            },
+            show: {
+                less: 'Afficher moins',
+                more: 'Afficher tout'
+            },
+        },
         loadingMore: 'Chargement des résultats suivants...',
         mostRelevant: 'Les plus pertinents',
-        show: {
-            all: 'Tout voir',
-            more: 'Voir plus'
-        },
         sort: {
             movie: {
                 titleSortOnly: {
