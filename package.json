@@ -13,6 +13,7 @@
     "test": "BABEL_ENV=test mocha src/**/__tests__/**/*.js",
     "test:watch": "BABEL_ENV=test mocha src/**/__tests__/**/*.js --watch",
     "start": "better-npm-run dev-server",
+    "start-local":"better-npm-run dev-server-local",
     "build:node": "better-npm-run babelify",
     "build": "npm run build:node",
     "build:watch": "better-npm-run watch",
@@ -35,6 +36,24 @@
         "PACKAGE_JSON_PATH": "../",
         "PAGE_TITLE": "Focus demonstration application",
         "SOURCE_MAP": false
+      },
+      "dev-server-local": {
+        "command": "node ./server.js",
+        "env": {
+          "ANCHOR_CLASS": "demo-app",
+          "API_HOST": "localhost",
+          "API_PORT": 8080,
+          "BABELIFIED_PATH": "./app",
+          "BASE_URL": "/",
+          "DEV": true,
+          "ENTRY_FILE_PATH": "./app/",
+          "LOCAL_FOCUS": true,
+          "LEGACY_SEARCH_API": false,
+          "MINIMIFY": false,
+          "PACKAGE_JSON_PATH": "../",
+          "PAGE_TITLE": "Focus demonstration application",
+          "SOURCE_MAP": false
+        }
       }
     },
     "watch": {
