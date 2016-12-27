@@ -29,7 +29,7 @@
         "BASE_URL": "/",
         "DEV": true,
         "ENTRY_FILE_PATH": "./app/",
-        "LOCAL_FOCUS": false,
+        "LOCAL_FOCUS": true,
         "LEGACY_SEARCH_API": false,
         "MINIMIFY": false,
         "PACKAGE_JSON_PATH": "../",
