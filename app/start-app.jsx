@@ -2,10 +2,10 @@ import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader';
 import Application from './application';
-
+import {initFetch} from './services/fetch'
 import { browserHistory } from 'react-router';
 import store from './stores';
-
+//initFetch(store.dispatch)
 console.log('Launching the app...');
 const rootEl = document.querySelector('.demo-app');
 render(

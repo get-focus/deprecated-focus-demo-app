@@ -20,7 +20,7 @@ import DevTools from '../../../tools/dev-tools';
 
 //connected components
 const ConnectedScrollTrigger = connectToStore(headerIsExpandedSelector,{expandHeader, unExpandHeader})(ScrollTrigger);
-
+const MenuSelected = ({pathname, homepath}) => <Menu pathname={pathname} homePath={homepath}  />
 //wrapped components
 const AppConfirmComponent = props => <ConfirmWrapper {...props} ConfirmationModal={ConfirmationPopin}/>
 const AppMessageCenter = props => <MessageCenter {...props} MessageComponent={SnackBar} />
@@ -28,7 +28,11 @@ const AppHeader = props => <Header {...props} ContentActionsComponent={ContentAc
 
 const AppLayout = (props) => (
     <ConnectedScrollTrigger>
-        <Layout AppHeader={AppHeader} Footer={Footer} LoadingBar={LoadingBar} ConfirmWrapper={AppConfirmComponent} Menu={Menu} MessageCenter={AppMessageCenter}>
+        <Layout AppHeader={AppHeader} Footer={Footer}
+          LoadingBar={LoadingBar}
+          ConfirmWrapper={AppConfirmComponent}
+           Menu={() => <MenuSelected pathname={props.location.pathname} />}
+           MessageCenter={AppMessageCenter}>
             {props.children}
             {props.hasDevtools && <DevTools />}
         </Layout>
