@@ -25,7 +25,7 @@
         "ANCHOR_CLASS": "demo-app",
         "API_HOST": "localhost",
         "API_PORT": 8080,
-        "BABELIFIED_PATH": "./app",
+        "BABELIFIED_PATH": [ "./app"],
         "BASE_URL": "/",
         "DEV": true,
         "ENTRY_FILE_PATH": "./app/",
@@ -34,7 +34,7 @@
         "MINIMIFY": false,
         "PACKAGE_JSON_PATH": "../",
         "PAGE_TITLE": "Focus demonstration application",
-        "SOURCE_MAP": false
+        "SOURCE_MAPS": false
       }
     },
     "watch": {

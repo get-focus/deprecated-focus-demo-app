@@ -12,11 +12,11 @@ import {component as Modal} from 'focus-components/modal';
 //import QuickSearchView from '../search/quick';
 
 const menus = [
-    { icon: 'home', label: 'menu.home', route: '/' }, // route: 'home'
-    { icon: 'search', label: 'menu.search', handleOnClick: () => { /*this._onQuickSearchModalToggle()*/ }},
-    { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata', subMenus: [
-        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'},
-        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'},
+    { icon: 'home', label: 'menu.home', route: '/home' }, // route: 'home'
+    { icon: 'search', label: 'menu.search',route: '/search/advanced', handleOnClick: () => { /*this._onQuickSearchModalToggle()*/ }},
+    { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata', possibleRoutes:['/admin/masterdata'], subMenus: [
+        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata/countries'},
+        { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata/lol'},
         { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'},
         { icon: 'settings', label: 'menu.admin', route: '/admin/masterdata'}
     ]}
@@ -25,7 +25,7 @@ const menus = [
 class MenuDemo extends Component {
     render() {
         return (
-            <Menu menus={menus} />
+            <Menu menus={menus} {...this.props}/>
         )
     }
 }
