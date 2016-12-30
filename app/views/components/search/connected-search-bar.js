@@ -19,6 +19,7 @@ class SearchBarComponent extends PureComponent {
                 queryAction={queryAction}
                 scopes={scopes}
                 scope={scope}
+                placeholder='RECHERCHE'
                 scopeAction={scopeAction}
                 term={term} />
         );
