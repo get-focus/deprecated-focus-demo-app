@@ -1,11 +1,11 @@
-import createfocusFetchProxy from 'focus-application/fetch/fetch-proxy'
-let fetch;
+import focusFetchProxy from 'focus-application/fetch/fetch-proxy'
+//let fetch;
 
-export const initFetch =  dispatch => {
-  fetch = createfocusFetchProxy(dispatch);
-}
+// export const initFetch =  dispatch => {
+//   fetch = createfocusFetchProxy(dispatch);
+// }
 export const focusFetch = ({url, method, data}) => {
-    return fetch(url, {
+    return focusFetchProxy(url, {
         method: method,
         body: JSON.stringify(data),
         headers: {

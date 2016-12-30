@@ -5,7 +5,7 @@ import Application from './application';
 import {initFetch} from './services/fetch'
 import { browserHistory } from 'react-router';
 import store from './stores';
-initFetch(store.dispatch)
+//initFetch(store.dispatch)
 console.log('Launching the app...');
 const rootEl = document.querySelector('.demo-app');
 render(

@@ -26,7 +26,7 @@ const configuration = {
 const customConfig = localFocus ? {
     resolve: {
         alias: {
-            'focus-search': path.resolve(process.cwd(), '../../focus-search'),
+            'focus-application': path.resolve(process.cwd(), '../../focus-application'),
             'react-dom': path.resolve(process.cwd(), './node_modules/react-dom'),
             'react': path.resolve(process.cwd(), './node_modules/react')
         }
