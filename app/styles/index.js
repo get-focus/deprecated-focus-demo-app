@@ -35,6 +35,3 @@ import './preview.scss';
 import './quick-search.scss';
 import './scrollspy-container.scss';
 import './trailer.scss';
-
-//Style for print
-import './print.scss'
