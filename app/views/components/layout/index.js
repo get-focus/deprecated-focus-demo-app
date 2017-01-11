@@ -9,6 +9,7 @@ import Layout from 'focus-application/layout';
 import LoadingBar from 'focus-application/fetch';
 import MessageCenter from 'focus-application/messages';
 import ScrollTrigger from 'focus-application/layout/scroll-trigger';
+import FocusNotifications from 'focus-notifications';
 
 import ContentActionsComponent from 'focus-components/header-actions';
 import ConfirmationPopin from 'focus-components/confirmation-popin';
@@ -24,7 +25,8 @@ const ConnectedScrollTrigger = connectToStore(headerIsExpandedSelector,{expandHe
 //wrapped components
 const AppConfirmComponent = props => <ConfirmWrapper {...props} ConfirmationModal={ConfirmationPopin}/>
 const AppMessageCenter = props => <MessageCenter {...props} MessageComponent={SnackBar} />
-const AppHeader = props => <Header {...props} ContentActionsComponent={ContentActionsComponent} />
+const HeaderBarRight = props => <div><FocusNotifications /></div>
+const AppHeader = props => <Header {...props} BarContentRight={HeaderBarRight} ContentActionsComponent={ContentActionsComponent} />
 
 const AppLayout = (props) => (
     <ConnectedScrollTrigger>

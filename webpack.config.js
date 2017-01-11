@@ -26,10 +26,10 @@ const configuration = {
 const customConfig = localFocus ? {
     resolve: {
         alias: {
-            'focus-search': path.resolve(process.cwd(), '../../focus-search'),
+            //'focus-search': path.resolve(process.cwd(), '../../focus-search'),
+            'focus-notifications': path.resolve(process.cwd(), '../focus-notifications'),
             'react' : path.resolve(process.cwd(), './node_modules/react'),
-            'react-dom' : path.resolve(process.cwd(), './node_modules/react-dom'), 
-
+            'react-dom' : path.resolve(process.cwd(), './node_modules/react-dom'),
         }
     }
 } : {};

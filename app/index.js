@@ -5,6 +5,7 @@ import focusApplicationConf from 'focus-application/package.json';
 import focusComponentsConf from 'focus-components/package.json';
 import focusGraphConf from 'focus-graph/package.json';
 import focusSearchConf from 'focus-search/package.json';
+import focusNotificationsConf from 'focus-notifications/package.json';
 import reactConf from 'react/package.json';
 import reactDomConf from 'react-dom/package.json';
 import reactReduxConf from 'react-redux/package.json';
@@ -24,6 +25,7 @@ console.info(
         focus-components    ${focusComponentsConf.version}
         focus-graph         ${focusGraphConf.version}
         focus-search        ${focusSearchConf.version}
+        focus-notifications ${focusNotificationsConf.version}
 
         react               ${reactConf.version}
         react-dom           ${reactDomConf.version}
