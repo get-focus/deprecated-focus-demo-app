@@ -19,13 +19,23 @@ import Menu from '../menu';
 import Footer from '../footer';
 import DevTools from '../../../tools/dev-tools';
 
+import moment from 'moment';
+import i18next from 'i18next';
+
 //connected components
 const ConnectedScrollTrigger = connectToStore(headerIsExpandedSelector,{expandHeader, unExpandHeader})(ScrollTrigger);
+
+const nofiticationsConfig = {
+    rootURL:'http://localhost:8080/x/notification',
+    notificationURL: 'api/messages',
+    translateDate: (date) => moment(date).fromNow(),
+    translateText: (key) => i18next.t(key)
+}
 
 //wrapped components
 const AppConfirmComponent = props => <ConfirmWrapper {...props} ConfirmationModal={ConfirmationPopin}/>
 const AppMessageCenter = props => <MessageCenter {...props} MessageComponent={SnackBar} />
-const HeaderBarRight = props => <div><FocusNotifications /></div>
+const HeaderBarRight = props => <FocusNotifications config={nofiticationsConfig} iconName='mail_outline' onSingleClick={url => console.log('navigate', url)} />
 const AppHeader = props => <Header {...props} BarContentRight={HeaderBarRight} ContentActionsComponent={ContentActionsComponent} />
 
 const AppLayout = (props) => (

@@ -89,7 +89,7 @@
     "focus-components": "3.0.2-beta1",
     "focus-core": "^2.0.0",
     "focus-graph": "3.0.0",
-    "focus-notifications": "^0.4.0-beta6",
+    "focus-notifications": "^0.4.0-beta10",
     "focus-search": "3.0.1-beta8",
     "i18next": "3.4.1",
     "lodash": "^4.16.2",
