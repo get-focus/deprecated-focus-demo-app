@@ -1,4 +1,4 @@
-import {focusFetch} from './fetch';
+import focusFetch from 'focus-application/fetch/fetch-proxy'
 import movieUrl from '../config/server/movies';
 
 export default {
@@ -29,7 +29,7 @@ export default {
         }
         console.log(data)
         console.log(`[MOVIE] call updateMovieCaracteristics ${movId} method. data=${JSON.stringify(movieCaracteristics)}`);
-        return focusFetch({url: `http://localhost:8080/movies/${movId}/caract`, method: 'PUT', data: movieCaracteristics}).then((data) => {data.movId = movId; return data;});
+        return focusFetch({url: `http://localhost:8080/movies/1034845849/caract`, method: 'PUT', data: movieCaracteristics}).then((data) => {data.movId = movId; return data;});
         //return fetch(movieUrl.updateCaracteristics({urlData: {id: movId}, data: movieCaracteristics}), {isCORS: true}).then((data) => {data.movId = movId; return data;});
     },
     updateMovieSynopsis({movieSynopsis}) {

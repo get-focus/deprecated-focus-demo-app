@@ -20,6 +20,6 @@ export default createStore(
         confirm: confirmReducer,
         fetch: fetchReducer
     },
-    [middlewareAdvancedSearch, fetchMiddleware],
+    [middlewareAdvancedSearch],
     [DevTools.instrument()]
 );

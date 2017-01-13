@@ -15,6 +15,10 @@ export default {
         domain: 'DO_LABEL_LONG',
         isRequired: false
     },
+    sex: {
+        domain: 'DO_CODE',
+        isRequired: true
+    },
     productionYear: {
         domain: 'DO_YEAR',
         isRequired: true

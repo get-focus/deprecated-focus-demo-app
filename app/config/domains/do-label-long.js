@@ -1,9 +1,11 @@
 export default {
     type: 'text',
-    validator: [{
+    Blabla: 'truc',
+    validator: {
         type: 'string',
         options: {
-            maxLength: 200
+            Blabla: 'truc',
+            maxLength: 2
         }
-    }]
+    }
 };
