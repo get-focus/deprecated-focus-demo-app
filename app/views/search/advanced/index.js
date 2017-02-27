@@ -5,7 +5,6 @@ import SearchHeader from '../../components/search/header';
 import {connect as connectToHeader} from 'focus-application/behaviours/header';
 import DemoTitle from '../../components/demo-title';
 
-
 class AdvancedSearchView extends PureComponent {
     render() {
         return (
@@ -15,6 +14,7 @@ class AdvancedSearchView extends PureComponent {
         )
     }
 }
+
 const AdvancedSearchViewExtended = compose(
     connectToHeader({
         ExpandedHeaderComponent: SearchHeader,
@@ -22,4 +22,5 @@ const AdvancedSearchViewExtended = compose(
         LeftHeaderComponent: DemoTitle
     })
 )(AdvancedSearchView);
+
 export default AdvancedSearchViewExtended;

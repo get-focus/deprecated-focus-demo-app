@@ -6,26 +6,38 @@ import {
     saveBiographyTypes,
     loadIdentityTypes,
     saveIdentityTypes,
-    loadMovieLinksTypes
+    loadMovieLinksTypes,
+    loadFilmographyTypes,
+    loadLinkTypes
 } from '../action/person';
 
 
 // Données initiales pour la state redux
-const DEFAULT_DATA = {
-    movieLink: [],
-};
+const DEFAULT_DATA = {};
 
-export const identity = reducerBuilder({
-    name: 'person', //put here the name of the action
+export const personIdentity = reducerBuilder({
+    name: 'personIdentity', //put here the name of the action
     loadTypes: loadIdentityTypes,
     saveTypes: saveIdentityTypes,
     defaultData: DEFAULT_DATA
 });
 
-export const biography = reducerBuilder({
-    name: 'person', //put here the name of the action
+export const personBiography = reducerBuilder({
+    name: 'personBiography', //put here the name of the action
     loadTypes: loadBiographyTypes,
     saveTypes: saveBiographyTypes,
+    defaultData: DEFAULT_DATA
+});
+
+export const personFilmography = reducerBuilder({
+    name: 'personFilmography',
+    loadTypes: loadFilmographyTypes,
+    defaultData: DEFAULT_DATA
+});
+
+export const personLink = reducerBuilder({
+    name: 'personLink',
+    loadTypes: loadLinkTypes,
     defaultData: DEFAULT_DATA
 });
 
@@ -39,6 +51,12 @@ export const movieLink = (state = DEFAULT_DATA, action) => {
     }
 };
 
+export default {
+    personIdentity,
+    personBiography,
+    personFilmography,
+    personLink
+};
 //
 // export default combineReducers({
 //     biography

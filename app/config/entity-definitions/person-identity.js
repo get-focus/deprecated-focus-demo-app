@@ -1,5 +1,3 @@
-
-
 export default {
     code: {
         domain: 'DO_ID',
@@ -13,21 +11,9 @@ export default {
         domain: 'DO_FIRST_NAME',
         isRequired: true
     },
-    biography: {
-        domain: 'DO_COMMENT',
-        isRequired: true
-    },
-    shortBiography: {
-        domain: 'DO_COMMENT',
-        isRequired: true
-    },
     sex: {
         domain: 'DO_CODE',
         isRequired: true
-    },
-    photoURL: {
-        domain: 'DO_URL',
-        isRequired: false
     },
     birthDate: {
         domain: 'DO_DATE',
@@ -40,13 +26,5 @@ export default {
     activity: {
         domain: 'DO_LABEL_LONG',
         isRequired: false
-    },
-    movies: {
-        domain: 'DO_COMMENT',
-        isRequired: false
-    },
-    movieLinks: {
-        domain: 'DO_COMMENT',
-        redirect: ['movieLink']
     }
 };

@@ -43,14 +43,13 @@ PersonIdentity.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default compose(
-    connectToMetadata(['person']),
+    connectToMetadata(['personIdentity']),
     connectToMasterData(['genders']),
     connectToForm({
         formKey: 'personIdentityForm',
-        entityPathArray: ['person'],
+        entityPathArray: ['personIdentity'],
         loadAction: loadIdentityAction,
-        saveAction: saveIdentityAction,
-        nonValidatedFields: ['person.movieLinks']
+        saveAction: saveIdentityAction
     }),
     connectToFieldHelpers()
 )(PersonIdentity);

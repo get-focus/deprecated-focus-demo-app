@@ -85,12 +85,12 @@
     "focus"
   ],
   "dependencies": {
-    "focus-application": "^3.0.0-rc28",
-    "focus-components": "^3.0.0-rc55",
+    "focus-application": "3.2.2",
+    "focus-components": "3.2.7",
     "focus-core": "^2.0.0",
-    "focus-graph": "^3.0.0-beta12",
+    "focus-graph": "3.2.3",
     "focus-notifications": "0.2.0-rc6",
-    "focus-search": "^3.0.0-beta44",
+    "focus-search": "3.2.0",
     "i18next": "3.4.1",
     "lodash": "^4.16.2",
     "material-design-icons-iconfont": "2.0.5",

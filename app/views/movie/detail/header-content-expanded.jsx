@@ -28,10 +28,15 @@ class MovieHeaderExpanded extends PureComponent {
         );
     }
 }
+
 MovieHeaderExpanded.displayName = 'MovieHeaderExpanded';
+
 export default compose(
     connectToStore(selectData('movieCaracteristics', 'movieSynopsis')), // same thing : (state) => state.dataset.movie
     connectToMetadata(['movieCaracteristics', 'movieSynopsis']),
-    connectToForm({formKey: 'movieHeaderExpandedForm', entityPathArray: ['movieCaracteristics', 'movieSynopsis']}), // to map fields with values
+    connectToForm({
+        formKey: 'movieHeaderExpandedForm',
+        entityPathArray: ['movieCaracteristics', 'movieSynopsis']
+    }), // to map fields with values
     connectToFieldHelpers()
 )(MovieHeaderExpanded);

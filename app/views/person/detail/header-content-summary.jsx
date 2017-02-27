@@ -23,8 +23,8 @@ const PersonHeaderSummary = ({data}) => {
 
 export default compose(
     connectToStore(
-        selectData('person'), // same thing : (state) => state.dataset.person
+        selectData('personLink'), // same thing : (state) => state.dataset.person
     ),
-    connectToMetadata(['person']),
+    connectToMetadata(['personLink']),
     connectToFieldHelpers()
 )(PersonHeaderSummary);

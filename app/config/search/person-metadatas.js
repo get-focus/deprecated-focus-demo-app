@@ -1,30 +1,34 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, PureComponent} from 'react';
 import {compose} from 'redux';
 import {connect as connectToState} from 'react-redux';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
 import {buildFieldForLineSearch} from 'focus-search/store';
+import {withRouter} from 'react-router';
 
-
-function PurePersonLine({textFor, perId, ...props}) {
-    return (
-        <div key={perId} data-demo='person-line'>
-            <div className='level1'>{textFor('fullName', {entityPath: 'person'})}</div>
-        </div>
-    );
+class PurePersonLine extends PureComponent {
+    render() {
+        const {perId, textFor, router} = this.props;
+        const route = `persons/${perId}`;
+        return (
+            <div key={perId} data-demo='person-line' onClick={() => router.push(route)}>
+                <div className='level1'>{textFor('fullName', {entityPath: 'personLink'})}</div>
+                <div className='level2'>{textFor('activity', {entityPath: 'personLink'})}</div>
+            </div>
+        );
+    }
 };
 
 const PersonLine = compose(
-    connectToMetadata(['person']),
+    connectToMetadata(['personLink']),
     connectToState(buildFieldForLineSearch({
         searchName: 'advancedSearch',
         codeId : 'perId',
-        entityPath: 'person',
+        entityPath: 'personLink',
         code: 'PERSON'
     })),
     connectToFieldHelpers()
-)(PurePersonLine);
-
+)(withRouter(PurePersonLine));
 
 export default {
     lineIdentifierProperty: 'perId',

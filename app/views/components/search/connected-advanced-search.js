@@ -15,4 +15,5 @@ const searchOptions = {
 const ConnectedSearch = compose(
     connectToSearch(searchOptions)
 )(AdvancedSearch);
+
 export default ConnectedSearch;

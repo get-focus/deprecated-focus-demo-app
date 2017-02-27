@@ -1,9 +1,11 @@
-//librairies
 import React, {PropTypes, PureComponent} from 'react';
+import i18next from 'i18next';
+import {connect as connectToStore} from 'react-redux';
 import {connect as connectToForm } from 'focus-graph/behaviours/form';
-import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
+import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {compose} from 'redux';
+import {selectData} from 'focus-graph/store/create-store';
 
 //actions
 import {loadBiographyAction, saveBiographyAction} from '../../../action/person';
@@ -35,10 +37,10 @@ PersonBiography.propTypes = {
     id: PropTypes.number.isRequired
 };
 export default compose(
-    connectToMetadata(['person']),
+    connectToMetadata(['personBiography']),
     connectToForm({
         formKey: 'personBiographyForm',
-        entityPathArray: ['person'],
+        entityPathArray: ['personBiography'],
         loadAction: loadBiographyAction,
         saveAction: saveBiographyAction
     }),
