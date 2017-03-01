@@ -5,7 +5,7 @@ import compose from 'lodash/flowRight';
 import {connect as connectToHeader} from 'focus-application/behaviours/header';
 // web components
 import ScrollspyContainer from 'focus-components/scrollspy-container';
-import ButtonBack from '../../components/go-back-button';
+import ButtonBack from 'focus-components/button-back';
 
 //views
 import Biography from './biography';
@@ -26,19 +26,15 @@ class PersonDetailView extends PureComponent {
         const {id} = this.props;
         return (
             <ScrollspyContainer>
-                <div data-demo='print-page-breaker'>
-                    {/* Bloc header dupliqué juste pour print*/}
-                    <div data-demo='print'>
-                        <HeaderExpanded id={id} />
-                    </div>
-                    <div data-demo='detail-overview'>
-                        <Overview id={id} />
-                    </div>
-                    <Identity id={id} />
+                {/* Bloc header dupliqué juste pour print*/}
+                <div data-demo='print'>
+                    <HeaderExpanded id={id} />
                 </div>
-                <div data-demo='print-page-breaker'>
-                    <Biography id={id} />
+                <div data-demo='detail-overview'>
+                    <Overview id={id} />
                 </div>
+                <Identity id={id} />
+                <Biography id={id} />
                 <Movies id={id} />
             </ScrollspyContainer>
         );
