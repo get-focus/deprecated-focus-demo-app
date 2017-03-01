@@ -8,6 +8,7 @@ import movieLink from './movie-link';
 import moviePeople from './movie-people';
 import movieSynopsis from './movie-synopsis';
 import movieTrailer from './movie-trailer';
+import notification from './notifications';
 import person from './person';
 
 export default {
@@ -17,5 +18,6 @@ export default {
     moviePeople,
     movieSynopsis,
     movieTrailer,
+    notification,
     person
 };

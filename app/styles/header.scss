@@ -5,19 +5,21 @@ $header-content-summary-padding-top: 5px;
 
 [data-demo="search-header"] {
     text-align: center;
+    width: 100%;
     h1 {
         font-size: 42px;
         line-height: 50px;
+    }
+    [data-focus="search-bar"] {
+        max-width: 700px;
+        margin: 10px auto;
     }
 }
 
 [data-focus="header"] {
     &[data-is-expanded="false"] {
         [data-focus="header-bar-summary"] {
-            justify-content: center;
-            h1 {
-                display: none;
-            }
+
         }
     }
 }

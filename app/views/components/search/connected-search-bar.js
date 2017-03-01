@@ -3,6 +3,7 @@ import compose from 'lodash/flowRight';
 import {connect as connectToSearch} from 'focus-search/behaviours/search';
 import SearchBar from 'focus-search/components/searchbar';
 import {unitSearchActions} from '../../../action/search';
+import i18next from 'i18next';
 
 const searchOptions = {
     searchName : 'advancedSearch',
@@ -19,7 +20,7 @@ class SearchBarComponent extends PureComponent {
                 queryAction={queryAction}
                 scopes={scopes}
                 scope={scope}
-                placeholder='RECHERCHE'
+                placeholder={i18next.t(`search.bar.placeholder.${scope}`)}
                 scopeAction={scopeAction}
                 term={term} />
         );

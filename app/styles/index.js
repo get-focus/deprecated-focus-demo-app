@@ -10,6 +10,7 @@ import 'focus-components/style';
 
 //--------------------------------------------------------------------------
 //styles from demo
+import './fonts/index.scss';
 import './layout.scss';
 //
 import './advanced-search.scss';

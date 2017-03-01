@@ -34,6 +34,7 @@ export default {
     menu: {
         admin: 'Administration',
         home: 'Accueil',
+        notifications: 'Notifications',
         search: 'Recherche'
     },
     result: {
@@ -44,7 +45,11 @@ export default {
     },
     search: {
         bar: {
-            placeholder: 'Saisissez un nom de film, ou de personne...'
+            placeholder: {
+                all: 'Saisissez un nom de film, ou de personne...',
+                movie: 'Saisissez un nom de film, un thème, ...',
+                person: 'Saisissez un nom, un prénom d\'acteur ou de réalisateur...',
+            }
         },
         cartridge: {
             title: 'Vous recherchez ?'

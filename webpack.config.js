@@ -26,10 +26,13 @@ const configuration = {
 const customConfig = localFocus ? {
     resolve: {
         alias: {
-            'focus-search': path.resolve(process.cwd(), '../../focus-search'),
+            'focus-components': path.resolve(process.cwd(), '../focus-components'),
+            //'focus-application': path.resolve(process.cwd(), '../focus-application'),
+            //'focus-search': path.resolve(process.cwd(), '../focus-search'),
+            //'focus-notifications': path.resolve(process.cwd(), '../focus-notifications'),
+            'i18next': path.resolve(process.cwd(), './node_modules/i18next'),
             'react' : path.resolve(process.cwd(), './node_modules/react'),
-            'react-dom' : path.resolve(process.cwd(), './node_modules/react-dom'), 
-
+            'react-dom' : path.resolve(process.cwd(), './node_modules/react-dom'),
         }
     }
 } : {};

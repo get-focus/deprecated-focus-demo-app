@@ -4,7 +4,7 @@ import MovieDetailView from '../views/movie/detail';
 const route = [
     {
         path: 'movies/:id',
-        component: (props) => (<MovieDetailView id={parseInt(props.params.id)} {...props}/>)
+        component: (props) => (<MovieDetailView id={+props.params.id} {...props}/>)
     }
 ];
 

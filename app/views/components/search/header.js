@@ -3,11 +3,21 @@ import i18next from 'i18next';
 import ConnectedSearchBarComponent from './connected-search-bar';
 import {withRouter} from 'react-router';
 
+
 export class SearchHeaderWithRouter extends PureComponent {
-    render() {
+    constructor(props){
+        super(props);
+        this._handleOnChange = this._handleOnChange.bind(this);
+    }
+    _handleOnChange() {
         const {router} = this.props;
-        console.log('search');
-        return <SearchHeader onChange={() => router.push('/search/advanced')} />
+        if(router) {
+            router.push('/search/advanced');
+        }
+    }
+    render() {
+        const {router, ...otherProps} = this.props;
+        return <SearchHeader onChange={this._handleOnChange} {...otherProps} />
     }
 }
 SearchHeaderWithRouter.displayName = 'SearchHeaderWithRouter';
@@ -15,10 +25,10 @@ export const SearchHeaderWithRedirect = withRouter(SearchHeaderWithRouter);
 
 class SearchHeader extends PureComponent {
     render() {
-        const {onChange} = this.props;
+        const {hasTitle, onChange} = this.props;
         return (
             <div data-demo='search-header'>
-                <h1>{i18next.t('search.cartridge.title')}</h1>
+                {hasTitle && <h1>{i18next.t('search.cartridge.title')}</h1>}
                 <ConnectedSearchBarComponent onChange={onChange} />
             </div>
         );
@@ -26,6 +36,10 @@ class SearchHeader extends PureComponent {
 };
 SearchHeader.displayName = 'SearchHeader';
 SearchHeader.propTypes = {
+    hasTitle: PropTypes.bool,
     onChange: PropTypes.func
+};
+SearchHeader.defaultProps = {
+    hasTitle: true
 };
 export default SearchHeader;

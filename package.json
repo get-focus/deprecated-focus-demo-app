@@ -2,7 +2,7 @@
   "author": "focus@kleegroup.com",
   "name": "focus-demo-app",
   "description": "Focus demonstration application",
-  "version": "3.0.0-beta0",
+  "version": "3.1.0",
   "main": "src/index.js",
   "license": "MIT",
   "bugs": {
@@ -13,7 +13,7 @@
     "test": "BABEL_ENV=test mocha src/**/__tests__/**/*.js",
     "test:watch": "BABEL_ENV=test mocha src/**/__tests__/**/*.js --watch",
     "start": "better-npm-run dev-server",
-    "start-local":"better-npm-run dev-server-local",
+    "start-local": "better-npm-run dev-server-local",
     "build:node": "better-npm-run babelify",
     "build": "npm run build:node",
     "build:watch": "better-npm-run watch",
@@ -30,30 +30,30 @@
         "BASE_URL": "/",
         "DEV": true,
         "ENTRY_FILE_PATH": "./app/",
-        "LOCAL_FOCUS": false,
+        "LOCAL_FOCUS": true,
         "LEGACY_SEARCH_API": false,
         "MINIMIFY": false,
         "PACKAGE_JSON_PATH": "../",
         "PAGE_TITLE": "Focus demonstration application",
         "SOURCE_MAPS": false
-      },
-      "dev-server-local": {
-        "command": "node ./server.js",
-        "env": {
-          "ANCHOR_CLASS": "demo-app",
-          "API_HOST": "localhost",
-          "API_PORT": 8080,
-          "BABELIFIED_PATH": "./app",
-          "BASE_URL": "/",
-          "DEV": true,
-          "ENTRY_FILE_PATH": "./app/",
-          "LOCAL_FOCUS": false,
-          "LEGACY_SEARCH_API": false,
-          "MINIMIFY": false,
-          "PACKAGE_JSON_PATH": "../",
-          "PAGE_TITLE": "Focus demonstration application",
-          "SOURCE_MAP": false
-        }
+      }
+    },
+    "dev-server-local": {
+      "command": "node ./server.js",
+      "env": {
+        "ANCHOR_CLASS": "demo-app",
+        "API_HOST": "localhost",
+        "API_PORT": 8080,
+        "BABELIFIED_PATH": "./app",
+        "BASE_URL": "/",
+        "DEV": true,
+        "ENTRY_FILE_PATH": "./app/",
+        "LOCAL_FOCUS": true,
+        "LEGACY_SEARCH_API": false,
+        "MINIMIFY": false,
+        "PACKAGE_JSON_PATH": "../",
+        "PAGE_TITLE": "Focus demonstration application",
+        "SOURCE_MAP": false
       }
     },
     "watch": {
@@ -85,12 +85,12 @@
     "focus"
   ],
   "dependencies": {
-    "focus-application": "^3.0.0-rc28",
-    "focus-components": "^3.0.0-rc55",
+    "focus-application": "3.2.5",
+    "focus-components": "3.2.7-beta0",
     "focus-core": "^2.0.0",
-    "focus-graph": "^3.0.0-beta12",
-    "focus-notifications": "0.2.0-rc6",
-    "focus-search": "^3.0.0-beta44",
+    "focus-graph": "3.2.5",
+    "focus-notifications": "0.4.0-rc0",
+    "focus-search": "3.2.2",
     "i18next": "3.4.1",
     "lodash": "^4.16.2",
     "material-design-icons-iconfont": "2.0.5",

@@ -1,17 +1,13 @@
 @import "variables";
 @import "mixins";
 
+html, body {
+    font-family: 'roboto';
+}
+
 .demo-app  {
-    // width: 100%;
-    // min-height: 100%;
-    // margin: 0;
-
     [data-focus='layout']{
-        //font-family: Roboto, Helvetica, Arial, sans-serif;
         color: $primary-text-color;
-        //position: relative;
-        //min-height: 100%;
-
         a {
             color: $accent-color;
             cursor: pointer;
@@ -27,32 +23,32 @@
     }
     h1 {
         font-size: 112px;
-        line-height: 98px;
+        line-height: auto;
         font-weight: 300;
     }
     h2 {
         font-size: 56px;
-        line-height: 50px;
+        line-height: auto;
         font-weight: 400;
     }
     h3 {
         font-size: 45px;
-        line-height: 40px;
+        line-height: auto;
         font-weight: 400;
     }
     h4 {
         font-size: 34px;
-        line-height: 30px;
+        line-height: auto;
         font-weight: 400;
     }
     h5 {
         font-size: 24px;
-        line-height: 22px;
+        line-height: auto;
         font-weight: 400;
     }
     h6 {
         font-size: 20px;
-        line-height: 20px;
+        line-height: auto;
         font-weight: 500;
     }
 }

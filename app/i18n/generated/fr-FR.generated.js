@@ -4,24 +4,24 @@
 */
 
 export default {
-    movieCaracteristics: {
-        keywords: 'Mots clés',
-        originalTitle: 'Titre original',
-        movieType: 'Type de film',
-        productionYear: 'Année de production',
-        runtime: 'Durée en minutes',
-        poster: 'URL de l\'affiche',
-        title: 'Titre'
-    },
+    // movieCaracteristics: {
+    //     keywords: 'Mots clés',
+    //     originalTitle: 'Titre original',
+    //     movieType: 'Type de film',
+    //     productionYear: 'Année de production',
+    //     runtime: 'Durée en minutes',
+    //     poster: 'URL de l\'affiche',
+    //     title: 'Titre'
+    // },
     movieCaracteristics: {
         code: 'Code',
         keywords: 'Mots clés',
-        originalTitle: 'Titre original',
         movieType: 'Type de film',
-        productionYear: 'Année de production',
-        shortSynopsis: 'Synopsis court',
-        runtime: 'Durée en minutes',
+        originalTitle: 'Titre original',
         poster: 'URL de l\'affiche',
+        productionYear: 'Année de production',
+        runtime: 'Durée en minutes',
+        shortSynopsis: 'Synopsis court',
         synopsis: 'Synopsis',
         title: 'Titre',
         trailerName: 'Nom de la bande annonce',
