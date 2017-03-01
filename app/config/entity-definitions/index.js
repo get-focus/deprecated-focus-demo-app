@@ -8,6 +8,10 @@ import movieLink from './movie-link';
 import moviePeople from './movie-people';
 import movieSynopsis from './movie-synopsis';
 import movieTrailer from './movie-trailer';
+import personBiography from './person-biography';
+import personFilmography from './person-filmography';
+import personIdentity from './person-identity';
+import personLink from './person-link';
 import person from './person';
 
 export default {
@@ -17,5 +21,7 @@ export default {
     moviePeople,
     movieSynopsis,
     movieTrailer,
-    person
+    personBiography,
+    personFilmography,
+    personIdentity
 };
