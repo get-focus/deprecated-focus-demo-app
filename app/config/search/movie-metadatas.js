@@ -19,13 +19,13 @@ class PureMovieLine extends PureComponent {
             </div>
         );
     }
-};
+}
 
 const MovieLine = compose(
     connectToMetadata(['movieCaracteristics']),
     connectToState(buildFieldForLineSearch({
         searchName: 'advancedSearch',
-        codeId : 'movId',
+        codeId: 'movId',
         entityPath: 'movieCaracteristics',
         code: 'MOVIE'
     })),
@@ -45,7 +45,7 @@ class GlobalGroupActions extends PureComponent {
             <Button label="Actions globales Movies" onClick={this._onClickAction} />
         );
     }
-};
+}
 
 export default {
     lineIdentifierProperty: 'movId',

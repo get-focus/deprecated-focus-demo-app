@@ -19,4 +19,5 @@ Picture.propTypes = {
     url: PropTypes.string,
     title: PropTypes.string
 };
+
 export default Picture;
