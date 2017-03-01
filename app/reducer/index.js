@@ -7,5 +7,5 @@ import notificationReducers from './notification';
 export default combineReducers({
     ...confirmReducers,
     ...movieReducers,
-    ...notificationReducers,
+    ...notificationReducers
 });

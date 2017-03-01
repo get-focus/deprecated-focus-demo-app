@@ -13,15 +13,14 @@ class MovieCaracteristics extends PureComponent {
     }
     render() {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving} = this.props;
-        const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
-            <Panel title='view.movie.detail.caracteristics' {...panelProps}>
-                {fieldFor('title', {entityPath: 'movieCaracteristics'})}
-                {fieldFor('originalTitle', {entityPath: 'movieCaracteristics'})}
-                {fieldFor('keywords', {entityPath: 'movieCaracteristics'})}
-                {fieldFor('runtime', {entityPath: 'movieCaracteristics'})}
-                {fieldFor('movieType', {entityPath: 'movieCaracteristics'})}
-                {fieldFor('productionYear', {entityPath: 'movieCaracteristics'})}
+            <Panel title='view.movie.detail.caracteristics' {...this.props}>
+                {fieldFor('title')}
+                {fieldFor('originalTitle')}
+                {fieldFor('keywords')}
+                {fieldFor('runtime')}
+                {fieldFor('movieType')}
+                {fieldFor('productionYear')}
             </Panel>
         );
     }
