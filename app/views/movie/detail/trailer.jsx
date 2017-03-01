@@ -12,6 +12,8 @@ import {saveTrailerAction} from '../../../action/movie';
 // web components
 import Panel from 'focus-components/panel';
 
+import Trailer from '../components/trailer';
+
 class MovieTrailer extends PureComponent {
     /** @inheritDoc */
     componentWillMount() {
@@ -30,13 +32,14 @@ class MovieTrailer extends PureComponent {
                 {/** TODO <Trailer url={trailerHref} />*/}
             </Panel>
         );
-    };
-};
+    }
+}
 
 MovieTrailer.displayName = 'MovieTrailer';
 MovieTrailer.propTypes = {
     id: PropTypes.number.isRequired
 };
+
 export default compose(
     connectToMetadata(['movieTrailer']),
     connectToForm({

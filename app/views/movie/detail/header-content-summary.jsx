@@ -26,6 +26,7 @@ class MovieHeaderSummary extends PureComponent {
 }
 
 MovieHeaderSummary.displayName = 'MovieHeaderSummary';
+
 export default compose(
     connectToStore(selectData('movieCaracteristics')), // same thing : (state) => state.dataset.movie
     connectToForm({formKey: 'movieHeaderSummaryForm', entityPathArray: ['movieCaracteristics']}), // to map fields with values

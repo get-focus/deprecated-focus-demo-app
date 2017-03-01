@@ -23,5 +23,9 @@ export default {
     existsInBdd: {
         domain: 'DO_YES_NO',
         isRequired: true
+    },
+    shortSynopsis: {
+        domain: 'DO_COMMENT',
+        isRequired: true
     }
 };
