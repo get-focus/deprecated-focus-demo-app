@@ -20,9 +20,6 @@ class PersonIdentity extends PureComponent {
     }
 
     render() {
-        console.log('Props', this.props);
-        console.log('State', this.state);
-
         const {fieldFor, selectFor, ...otherProps} = this.props;
         return (
             <Panel title='view.person.detail.identity' {...otherProps}>
@@ -49,7 +46,8 @@ export default compose(
         formKey: 'personIdentityForm',
         entityPathArray: ['personIdentity'],
         loadAction: loadIdentityAction,
-        saveAction: saveIdentityAction
+        saveAction: saveIdentityAction,
+        nonValidatedFields: ['person.movieLinks']
     }),
     connectToFieldHelpers()
 )(PersonIdentity);
