@@ -25,7 +25,7 @@ class MovieOverview extends PureComponent {
     };
     render() {
         const {data} = this.props;
-        const trailerHref = data.trailerHref;
+        const {data : {trailerHref}} = this.props.
         const code = data.movId;
         const url = `http://www.allocine.fr/film/fichefilm_gen_cfilm=${code}.html`;
         return (
