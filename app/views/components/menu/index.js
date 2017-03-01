@@ -1,15 +1,6 @@
-import React, {Component} from 'react';
-
-//import {navigate} from 'focus-core/history';
+import React, {PureComponent} from 'react';
 import Menu from 'focus-components/menu';
-import {component as Modal} from 'focus-components/modal';
-//import {quickSearchStore} from 'focus-core/search/built-in-store';
-//import dispatcher from 'focus-core/dispatcher';cd
-//
-
-
-//custom web component
-//import QuickSearchView from '../search/quick';
+import {withRouter} from 'react-router'
 
 const menus = [
     { icon: 'home', label: 'menu.home', route: '/' }, // route: 'home'
@@ -22,12 +13,13 @@ const menus = [
     ]}
 ];
 
-class MenuDemo extends Component {
+class MenuDemo extends PureComponent {
     render() {
+        const {pathname} = this.props;
         return (
-            <Menu menus={menus} />
+            <Menu menus={menus} pathname={pathname} />
         )
     }
 }
 MenuDemo.displayName = 'MenuDemo';
-export default MenuDemo;
+export default withRouter(MenuDemo);
