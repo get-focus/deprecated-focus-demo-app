@@ -35,7 +35,7 @@ export default {
         trailerName: 'Nom de la bande annonce',
         trailerHref: 'URL de la bande annonce'
     },
-    person: {
+    personIdentity: {
         code: 'Code',
         fullName: 'Nom complet',
         firstName: 'Prénom',
@@ -46,5 +46,18 @@ export default {
         birthDate: 'Date de naissance',
         birthPlace: 'Lieu de naissance',
         activity: 'Activité'
+    },
+    personBiography: {
+        biography: 'Biographie',
+        shortBiography: 'Biographie courte',
+    },
+    personLink: {
+        code: 'Code',
+        fullName: 'Nom complet',
+        firstName: 'Prénom',
+        biography: 'Biographie',
+        shortBiography: 'Biographie courte',
+        sex: 'Sexe',
+        photoURL: 'URL Photo'
     }
 };

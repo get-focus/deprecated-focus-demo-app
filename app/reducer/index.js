@@ -1,11 +1,8 @@
 import {combineReducers} from 'redux';
-//import ranking from './ranking';
-//import { identity, biography as person, movieLink } from './person' //TODO : remove as person when pierr will correct the bug
 import movieReducers from './movie';
-
-// export const personMovieLinksSelector = state => state.dataset.movieLink;
-// export const rankingSelector = state => state.dataset.ranking;
+import personReducers from './person';
 
 export default combineReducers({
-    ...movieReducers
+    ...movieReducers,
+    ...personReducers
 });

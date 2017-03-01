@@ -1,31 +1,34 @@
 import {reducerBuilder} from 'focus-graph/reducers/reducer-builder';
-// import {combineReducers} from 'redux';
-import {} from 'redux';
 import {
     loadBiographyTypes,
     saveBiographyTypes,
     loadIdentityTypes,
     saveIdentityTypes,
-    loadMovieLinksTypes
+    loadMovieLinksTypes,
+    loadFilmographyTypes,
+    loadLinkTypes
 } from '../action/person';
 
-
 // Données initiales pour la state redux
-const DEFAULT_DATA = {
-    movieLink: [],
-};
+const DEFAULT_DATA = {};
 
-export const identity = reducerBuilder({
-    name: 'person', //put here the name of the action
+export const personIdentity = reducerBuilder({
+    name: 'personIdentity', //put here the name of the action
     loadTypes: loadIdentityTypes,
     saveTypes: saveIdentityTypes,
     defaultData: DEFAULT_DATA
 });
 
-export const biography = reducerBuilder({
-    name: 'person', //put here the name of the action
+export const personBiography = reducerBuilder({
+    name: 'personBiography', //put here the name of the action
     loadTypes: loadBiographyTypes,
     saveTypes: saveBiographyTypes,
+    defaultData: DEFAULT_DATA
+});
+
+export const personFilmography = reducerBuilder({
+    name: 'personFilmography',
+    loadTypes: loadFilmographyTypes,
     defaultData: DEFAULT_DATA
 });
 
@@ -39,8 +42,8 @@ export const movieLink = (state = DEFAULT_DATA, action) => {
     }
 };
 
-//
-// export default combineReducers({
-//     biography
-//     //movieLinks
-// });
+export default {
+    personIdentity,
+    personBiography,
+    personFilmography
+};
