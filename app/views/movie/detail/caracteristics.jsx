@@ -1,10 +1,9 @@
 import React, {PropTypes, PureComponent} from 'react';
+import {compose} from 'redux';
+import Panel from 'focus-components/panel';
 import {connect as connectToForm } from 'focus-graph/behaviours/form';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
-import {compose} from 'redux';
-import Panel from 'focus-components/panel';
-
 import {loadCaracteristicsAction, saveCaracteristicsAction} from '../../../action/movie';
 
 class MovieCaracteristics extends PureComponent {
@@ -13,7 +12,7 @@ class MovieCaracteristics extends PureComponent {
         load(id);
     }
     render() {
-        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions, id} = this.props;
+        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving} = this.props;
         const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
         return (
             <Panel title='view.movie.detail.caracteristics' {...panelProps}>

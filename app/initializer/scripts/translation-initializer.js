@@ -7,6 +7,5 @@ import demoFr from '../../i18n/fr-FR';
 
 export default () => {
     console.info('|--- TRANSLATIONS');
-    console.log(notificationFr);
-    intializeTranslation(i18next, 'fr-FR', [componentsFr, notificationFr, searchFr, demoFr]);
+    intializeTranslation(i18next, 'fr-FR', [componentsFr, searchFr, notificationFr, demoFr]);
 };

@@ -5,5 +5,6 @@ const commonRoot = `${apiRoot}common/`;
 
 export default {
     /* loads */
-    search: builder(commonRoot + 'search?listState.skip=${skip}&listState.top=${top}', 'POST')
+    search: builder(commonRoot + 'search?listState.skip=${skip}&listState.top=${top}', 'POST'),
+    login: builder(commonRoot + 'login', 'GET')
 };

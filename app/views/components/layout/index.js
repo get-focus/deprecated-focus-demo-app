@@ -8,7 +8,7 @@ import {expandHeader, unExpandHeader} from 'focus-application/header/header-acti
 import Layout from 'focus-application/layout';
 import LoadingBar from 'focus-application/fetch';
 import MessageCenter from 'focus-application/messages';
-import ScrollTrigger from 'focus-application/layout/scroll-trigger';
+import ScrollTriggerConnectedToHeader from 'focus-application/header/scroll-trigger-header';
 import FocusNotifications from 'focus-notifications';
 
 import ContentActionsComponent from 'focus-components/header-actions';
@@ -22,29 +22,28 @@ import DevTools from '../../../tools/dev-tools';
 import moment from 'moment';
 import i18next from 'i18next';
 
-//connected components
-const ConnectedScrollTrigger = connectToStore(headerIsExpandedSelector,{expandHeader, unExpandHeader})(ScrollTrigger);
-
 const nofiticationsConfig = {
     rootURL:'http://localhost:8080/x/notification',
     notificationURL: 'api/messages',
     translateDate: (date) => moment(date).fromNow(),
-    translateText: (key) => i18next.t(key)
-}
+    translateText: (key) => i18next.t(key),
+    useCredentials: true,
+    useCors: true
+};
 
 //wrapped components
 const AppConfirmComponent = props => <ConfirmWrapper {...props} ConfirmationModal={ConfirmationPopin}/>
 const AppMessageCenter = props => <MessageCenter {...props} MessageComponent={SnackBar} />
-const HeaderBarRight = props => <FocusNotifications config={nofiticationsConfig} iconName='mail_outline' onSingleClick={url => console.log('navigate', url)} />
+const HeaderBarRight = props => <FocusNotifications config={nofiticationsConfig} onSingleClick={url => console.log('navigate', url)} />
 const AppHeader = props => <Header {...props} BarContentRight={HeaderBarRight} ContentActionsComponent={ContentActionsComponent} />
 
 const AppLayout = (props) => (
-    <ConnectedScrollTrigger>
+    <ScrollTriggerConnectedToHeader>
         <Layout AppHeader={AppHeader} Footer={Footer} LoadingBar={LoadingBar} ConfirmWrapper={AppConfirmComponent} Menu={Menu} MessageCenter={AppMessageCenter}>
             {props.children}
             {props.hasDevtools && <DevTools />}
         </Layout>
-    </ConnectedScrollTrigger>
+    </ScrollTriggerConnectedToHeader>
 );
 
 AppLayout.PropTypes = {

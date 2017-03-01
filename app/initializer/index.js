@@ -1,11 +1,11 @@
-import translationInitializer from './scripts/translation-initializer';
 import momentInitializer from './scripts/moment-initializer';
-import userInitializer from './scripts/user-initializer';
+import translationInitializer from './scripts/translation-initializer';
+import storeInitializer from './scripts/store-initializer';
 
 
 export const initialize = () => {
     console.info('[INITIALIZATIONS]');
     momentInitializer();
     translationInitializer();
-    userInitializer();
+    storeInitializer();
 };
