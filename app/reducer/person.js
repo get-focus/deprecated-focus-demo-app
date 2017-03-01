@@ -5,8 +5,7 @@ import {
     loadIdentityTypes,
     saveIdentityTypes,
     loadMovieLinksTypes,
-    loadFilmographyTypes,
-    loadLinkTypes
+    loadFilmographyTypes
 } from '../action/person';
 
 // Données initiales pour la state redux

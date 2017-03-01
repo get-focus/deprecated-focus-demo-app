@@ -50,14 +50,5 @@ export default {
     personBiography: {
         biography: 'Biographie',
         shortBiography: 'Biographie courte',
-    },
-    personLink: {
-        code: 'Code',
-        fullName: 'Nom complet',
-        firstName: 'Prénom',
-        biography: 'Biographie',
-        shortBiography: 'Biographie courte',
-        sex: 'Sexe',
-        photoURL: 'URL Photo'
     }
 };

@@ -12,19 +12,19 @@ class PurePersonLine extends PureComponent {
         const route = `persons/${perId}`;
         return (
             <div key={perId} data-demo='person-line' onClick={() => router.push(route)}>
-                <div className='level1'>{textFor('fullName', {entityPath: 'personIdentityk'})}</div>
-                <div className='level2'>{textFor('activity', {entityPath: 'personIdentityk'})}</div>
+                <div className='level1'>{textFor('fullName', {entityPath: 'personIdentity'})}</div>
+                <div className='level2'>{textFor('activity', {entityPath: 'personIdentity'})}</div>
             </div>
         );
     }
 };
 
 const PersonLine = compose(
-    connectToMetadata(['personLink']),
+    connectToMetadata(['personIdentity']),
     connectToState(buildFieldForLineSearch({
         searchName: 'advancedSearch',
         codeId : 'perId',
-        entityPath: 'personIdentityk',
+        entityPath: 'personIdentity',
         code: 'PERSON'
     })),
     connectToFieldHelpers()
