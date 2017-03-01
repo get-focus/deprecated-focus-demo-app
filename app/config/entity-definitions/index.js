@@ -11,8 +11,6 @@ import movieTrailer from './movie-trailer';
 import personBiography from './person-biography';
 import personFilmography from './person-filmography';
 import personIdentity from './person-identity';
-import personLink from './person-link';
-import person from './person';
 
 export default {
     country,

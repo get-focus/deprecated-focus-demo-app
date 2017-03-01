@@ -32,12 +32,6 @@ export const personFilmography = reducerBuilder({
     defaultData: DEFAULT_DATA
 });
 
-export const personLink = reducerBuilder({
-    name: 'personLink',
-    loadTypes: loadLinkTypes,
-    defaultData: DEFAULT_DATA
-});
-
 //TODO : Ajouter les cas de chargement et d'erreur.
 export const movieLink = (state = DEFAULT_DATA, action) => {
     switch(action.type) {
