@@ -13,6 +13,7 @@ import Poster from '../components/poster';
 class MovieHeaderExpanded extends PureComponent {
     render() {
         const {data, textFor} = this.props;
+        //essaiMovie
         const {title, poster, trailerHref} = data;
         return (
             <div data-demo='header-content-expanded'>

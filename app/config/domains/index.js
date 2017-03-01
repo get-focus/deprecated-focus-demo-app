@@ -10,6 +10,7 @@ import DO_LABEL_LONG from './do-label-long';
 import DO_LABEL_MEDIUM from './do-label-medium';
 import DO_LABEL_SHORT from './do-label-short';
 import DO_LAST_NAME from './do-last-name';
+import DO_MALE_FEMALE from './do-male-female';
 //import DO_PASSWORD from './do-password';
 import DO_QUANTITY from './do-quantity';
 import DO_RUNTIME from './do-runtime';
@@ -31,6 +32,7 @@ export default {
     DO_LABEL_SHORT,
     DO_LAST_NAME,
     //DO_PASSWORD,
+    DO_MALE_FEMALE,
     DO_QUANTITY,
     DO_RUNTIME,
     DO_URL,

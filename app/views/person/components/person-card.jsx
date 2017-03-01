@@ -42,4 +42,5 @@ PersonCard.propTypes = {
     onClickPreview: PropTypes.func,
     person: PropTypes.object.isRequired
 };
+
 export default PersonCard;

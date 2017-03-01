@@ -8,18 +8,14 @@ import ScrollspyContainer from 'focus-components/scrollspy-container';
 import ButtonBack from '../../components/go-back-button';
 
 //views
+import Biography from './biography';
 import HeaderExpanded from './header-content-expanded';
 import HeaderSummary from './header-content-summary';
-import Biography from './biography';
 import Identity from './identity';
 import Movies from './movies';
 import Overview from './overview';
 
 class PersonDetailView extends PureComponent {
-    /** @inheritDoc */
-    componentWillMount() {
-        //setHeader(cartridgeConf);
-    };
     /** @inheritDoc */
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -31,12 +27,12 @@ class PersonDetailView extends PureComponent {
         return (
             <ScrollspyContainer>
                 <div data-demo='print-page-breaker'>
-                    {/* Bloc header dupliqué juste pour print*/}
+                    {/* Bloc header dupliqué juste pour print
                     <div data-demo='print'>
-                        <HeaderExpanded hasLoad={false}/>
-                    </div>
+                        <HeaderExpanded id={id} />
+                    </div>*/}
                     <div data-demo='detail-overview'>
-                        <Overview hasLoad={false} hasForm={false} />
+                        <Overview id={id} />
                     </div>
                     <Identity id={id} />
                 </div>
@@ -46,8 +42,8 @@ class PersonDetailView extends PureComponent {
                 <Movies id={id} />
             </ScrollspyContainer>
         );
-    };
-};
+    }
+}
 
 PersonDetailView.displayName = 'PersonDetailView';
 PersonDetailView.propTypes = {

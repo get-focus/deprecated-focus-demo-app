@@ -1,7 +1,7 @@
 export default {
-    perId: {
+    code: {
         domain: 'DO_ID',
-        isRequired: false
+        isRequired: true
     },
     fullName: {
         domain: 'DO_LAST_NAME',
@@ -11,9 +11,21 @@ export default {
         domain: 'DO_FIRST_NAME',
         isRequired: true
     },
-    sex: {
-        domain: 'DO_MALE_FEMALE',
+    biography: {
+        domain: 'DO_COMMENT',
         isRequired: true
+    },
+    shortBiography: {
+        domain: 'DO_COMMENT',
+        isRequired: true
+    },
+    sex: {
+        domain: 'DO_CODE',
+        isRequired: true
+    },
+    photoURL: {
+        domain: 'DO_URL',
+        isRequired: false
     },
     birthDate: {
         domain: 'DO_DATE',
@@ -27,8 +39,12 @@ export default {
         domain: 'DO_LABEL_LONG',
         isRequired: false
     },
-    photoURL: {
-        domain: 'DO_URL',
+    movies: {
+        domain: 'DO_COMMENT',
         isRequired: false
+    },
+    movieLinks: {
+        domain: 'DO_COMMENT',
+        redirect: ['movieLink']
     }
 };

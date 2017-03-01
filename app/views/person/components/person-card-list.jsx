@@ -1,32 +1,25 @@
 //libraries
-import React, {PropTypes} from 'react';
+import React, {PropTypes, PureComponent} from 'react';
 
 //web components
 import PersonCard from './person-card';
 import {component as Modal} from 'focus-components/modal';
 import PersonPreview from '../../person/preview';
 
-
-export default React.createClass({
-    displayName: 'PersonCardList',
-    propTypes: {
-        persons: PropTypes.array
-    },
-    getDefaultProps() {
-        return {
-            persons: []
-        }
-    },
-    getInitialState() {
-        return {
+class PersonCardList extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
             personCodePreview: null
-        }
-    },
+        };
+    }
+
     _closePopin(cb){
-      this.setState({personCodePreview: null}, () => {
+        this.setState({personCodePreview: null}, () => {
             cb && cb();
-      });
-    },
+        });
+    }
+
     render() {
         const {persons} = this.props;
         const {personCodePreview} = this.state;
@@ -45,4 +38,14 @@ export default React.createClass({
             </div>
         );
     }
-});
+}
+
+PersonCardList.displayName = 'PersonCardList';
+PersonCardList.propTypes = {
+    persons: PropTypes.array
+};
+PersonCardList.defaultProps = {
+    persons: [],
+};
+
+export default PersonCardList;

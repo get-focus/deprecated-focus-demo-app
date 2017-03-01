@@ -12,6 +12,8 @@ import {saveTrailerAction} from '../../../action/movie';
 // web components
 import Panel from 'focus-components/panel';
 
+import Trailer from '../components/trailer';
+
 class MovieTrailer extends PureComponent {
     /** @inheritDoc */
     componentWillMount() {
@@ -22,6 +24,9 @@ class MovieTrailer extends PureComponent {
     render() {
         const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
         const panelProps = {editing, loading, save, saving, toggleEdit, getUserInput};
+        const {data} = this.props;
+        //pourcentage
+        //const trailerHref = data.trailerHref;
         return (
             <Panel title='view.movie.detail.trailer' {...panelProps}>
                 {fieldFor('trailerName', {entityPath: 'movieTrailer'})}

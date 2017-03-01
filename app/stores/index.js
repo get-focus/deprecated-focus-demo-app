@@ -12,7 +12,7 @@ import {middlewareAdvancedSearch, middlewareOtherSearch} from '../action/search'
 
 export default createStore(
     {
-        advancedSearch : unitSearchReducers,
+        advancedSearch: unitSearchReducers,
         dataset: rootReducer,
         messages: messageReducer,
         header: headerReducer,

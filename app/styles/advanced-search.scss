@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixins";
 
-
 [data-focus='advanced-search'] {
     [data-focus="facet-container"] {
         [data-focus='facet-box'] {
@@ -16,6 +15,25 @@
                         ul {
                             li:hover{
                                 color: $accent-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    [data-focus="results-advanced-search"] {
+        [data-focus="result-group"] {
+            [data-focus="result-list"] {
+                [data-focus="list-with-pagination"] {
+                    [data-focus="list-with-toolbar"] {
+                        [data-focus="list-component"] {
+                            [data-focus="line-advanced-search"] {
+                                [data-focus="line-component"] {
+                                    [data-focus="line-component-data"] {
+                                        cursor: pointer;
+                                    }
+                                }
                             }
                         }
                     }

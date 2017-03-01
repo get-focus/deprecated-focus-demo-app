@@ -26,5 +26,9 @@ export default {
     title: {
         domain: 'DO_LABEL_LONG',
         isRequired: true
+    },
+    poster: {
+        domain: 'DO_URL',
+        isRequired: false
     }
 };

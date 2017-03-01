@@ -19,13 +19,13 @@ class PureMovieLine extends PureComponent {
             </div>
         );
     }
-};
+}
 
 const MovieLine = compose(
     connectToMetadata(['movieCaracteristics']),
     connectToState(buildFieldForLineSearch({
         searchName: 'advancedSearch',
-        codeId : 'movId',
+        codeId: 'movId',
         entityPath: 'movieCaracteristics',
         code: 'MOVIE'
     })),

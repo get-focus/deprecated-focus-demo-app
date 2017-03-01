@@ -1,7 +1,7 @@
 export default {
-    code: {
+    perId: {
         domain: 'DO_ID',
-        isRequired: true
+        isRequired: false
     },
     fullName: {
         domain: 'DO_LAST_NAME',

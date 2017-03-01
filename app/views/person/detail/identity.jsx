@@ -11,8 +11,6 @@ import {loadIdentityAction, saveIdentityAction} from '../../../action/person';
 
 // web components
 import Panel from 'focus-components/panel';
-import Form from 'focus-components/form';
-
 
 class PersonIdentity extends PureComponent {
     componentWillMount() {
@@ -22,26 +20,28 @@ class PersonIdentity extends PureComponent {
     }
 
     render() {
-        const {editing, fieldFor, toggleEdit, save, getUserInput, loading, saving, selectFor, renderActions} = this.props;
+        console.log('Props', this.props);
+        console.log('State', this.state);
+
+        const {fieldFor, selectFor, ...otherProps} = this.props;
         return (
-            <Form editing={editing}>
-                <Panel title='view.person.detail.identity'>
-                    {fieldFor('fullName')}
-                    {fieldFor('firstName')}
-                    {selectFor('sex', {masterDatum: 'genders'})}
-                    {fieldFor('birthDate')}
-                    {fieldFor('birthPlace')}
-                    {fieldFor('activity')}
-                </Panel>
-            </Form>
+            <Panel title='view.person.detail.identity' {...otherProps}>
+                {fieldFor('fullName')}
+                {fieldFor('firstName')}
+                {/**selectFor('sex', {masterDatum: 'genders'})*/}
+                {fieldFor('birthDate')}
+                {fieldFor('birthPlace')}
+                {fieldFor('activity')}
+            </Panel>
         );
     }
-};
+}
 
 PersonIdentity.displayName = 'PersonIdentity';
 PersonIdentity.propTypes = {
     id: PropTypes.number.isRequired
 };
+
 export default compose(
     connectToMetadata(['personIdentity']),
     connectToMasterData(['genders']),

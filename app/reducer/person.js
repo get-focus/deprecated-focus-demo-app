@@ -1,6 +1,4 @@
 import {reducerBuilder} from 'focus-graph/reducers/reducer-builder';
-// import {combineReducers} from 'redux';
-import {} from 'redux';
 import {
     loadBiographyTypes,
     saveBiographyTypes,
@@ -10,7 +8,6 @@ import {
     loadFilmographyTypes,
     loadLinkTypes
 } from '../action/person';
-
 
 // Données initiales pour la state redux
 const DEFAULT_DATA = {};
@@ -57,8 +54,3 @@ export default {
     personFilmography,
     personLink
 };
-//
-// export default combineReducers({
-//     biography
-//     //movieLinks
-// });

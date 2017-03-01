@@ -1,30 +1,37 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, PureComponent} from 'react';
+import i18next from 'i18next';
 import {connect as connectToStore} from 'react-redux';
+import {connect as connectToForm } from 'focus-graph/behaviours/form';
 import {connect as connectToFieldHelpers} from 'focus-graph/behaviours/field';
 import {connect as connectToMetadata} from 'focus-graph/behaviours/metadata';
 import {compose} from 'redux';
 import {selectData} from 'focus-graph/store/create-store';
-import i18next from 'i18next';
 
 //custom components
 import Picture from '../components/picture';
 
-const PersonHeaderSummary = ({data}) => {
-    const {fullName, photoURL} = data;
-    return (
-        <div data-demo='header-content-summary'>
-            <div className="key-concept">{i18next.t('view.person.keyConcept.name')}</div>
-            <Picture url={photoURL} title={fullName} />
-            <h4>textFor('fullName')</h4>
-        </div>
-    );
-};
+class PersonHeaderSummary extends PureComponent {
+    render() {
+        const {data, textFor} = this.props;
+        const {fullName, photoURL} = data;
+        return (
+            <div data-demo='header-content-summary'>
+                <div className="key-concept">{i18next.t('view.person.keyConcept.name')}</div>
+                <Picture url={photoURL} title={fullName} />
+                <h4>{textFor('fullName', {entityPath: 'personIdentity'})}</h4>
+            </div>
+        );
+    }
+}
 
+PersonHeaderSummary.displayName = 'PersonHeaderSummary';
 
 export default compose(
-    connectToStore(
-        selectData('personLink'), // same thing : (state) => state.dataset.person
-    ),
-    connectToMetadata(['personLink']),
+    connectToStore(selectData('personIdentity')),
+    connectToMetadata(['personIdentity']),
+    connectToForm({
+        formKey: 'personLinkForm',
+        entityPathArray: ['personIdentity']
+    }),
     connectToFieldHelpers()
 )(PersonHeaderSummary);
