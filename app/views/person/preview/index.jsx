@@ -44,11 +44,11 @@
 //     /** @inheritDoc */
 //     render() {
 //         const {id} = this.props;
-//         const {code,fullName, photoURL} = this.state;
+//         const {code,fullName, photoHref} = this.state;
 //         return (
 //             <div data-demo='preview'>
 //                 <div data-demo='preview-header'>
-//                     <Picture url={photoURL} title={fullName} />
+//                     <Picture url={photoHref} title={fullName} />
 //                     <div>
 //                         <h3>{this.textFor('fullName')}</h3>
 //                         <h5>{this.textFor('activity')}</h5>

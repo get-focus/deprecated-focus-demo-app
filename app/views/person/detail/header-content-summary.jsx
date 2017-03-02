@@ -13,11 +13,11 @@ import Picture from '../components/picture';
 class PersonHeaderSummary extends PureComponent {
     render() {
         const {data, textFor} = this.props;
-        const {fullName, photoURL} = data;
+        const {fullName, photoHref} = data;
         return (
             <div data-demo='header-content-summary'>
                 <div className="key-concept">{i18next.t('view.person.keyConcept.name')}</div>
-                <Picture url={photoURL} title={fullName} />
+                <Picture url={photoHref} title={fullName} />
                 <h4>{textFor('fullName', {entityPath: 'personIdentity'})}</h4>
             </div>
         );

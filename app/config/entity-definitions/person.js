@@ -25,7 +25,7 @@ export default {
         domain: 'DO_CODE',
         isRequired: true
     },
-    photoURL: {
+    photoHref: {
         domain: 'DO_URL',
         isRequired: false
     },

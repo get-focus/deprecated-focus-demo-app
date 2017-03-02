@@ -13,10 +13,10 @@ import Picture from '../components/picture';
 class PersonHeaderExpanded extends PureComponent {
     render() {
         const {data, textFor} = this.props;
-        const {fullName, photoURL} = data;
+        const {fullName, photoHref} = data;
         return (
             <div data-demo='header-content-expanded'>
-                <Picture url={photoURL} title={fullName} />
+                <Picture url={photoHref} title={fullName} />
                 <div data-demo='header-content-expanded__infos'>
                     <div className="key-concept">{i18next.t('view.person.keyConcept.name')}</div>
                     <h3>{textFor('fullName', {entityPath: 'personIdentity'})}</h3>
