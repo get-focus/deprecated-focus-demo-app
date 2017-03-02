@@ -14,7 +14,6 @@ import Posters from './posters';
 import Synopsis from './synospis';
 import Trailer from './trailer';
 
-
 class MovieDetailView extends PureComponent {
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -33,12 +32,13 @@ class MovieDetailView extends PureComponent {
             </ScrollspyContainer>
         );
     }
-};
+}
 
 MovieDetailView.displayName = 'MovieDetailView';
 MovieDetailView.propTypes = {
     id: PropTypes.number.isRequired
 };
+
 export default compose(
     connectToHeader({
         ExpandedHeaderComponent: HeaderExpanded,
