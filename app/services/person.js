@@ -9,16 +9,11 @@ const fetch = fetchBuilder({
 export default {
     loadPerson(id) {
         console.log(`[PERSON] call loadPerson(${id}) method`);
-        return fetch({url: `${id}`, method: 'GET'}).then((data) => {data.perId = id; return data;});
+        return fetch({url: `${id}`, method: 'GET'});
     },
     loadPersonMovies(id) {
         console.log(`[PERSON] call loadPersonMovies(${id}) method`);
-        return fetch({url: `${id}`, method: 'GET'}).then((data) => {
-            if(data && data.movieLinks) {
-                return data.movieLinks;
-            }
-            return [];
-        });
+        return fetch({url: `${id}`, method: 'GET'});
     },
     updatePersonBiography({person}) {
         const personId = person.code;
