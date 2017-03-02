@@ -21,12 +21,10 @@ export default {
     },
     updatePersonBiography({person}) {
         const personId = person.code;
-        return fetch({url: `${personId}`, method: 'POST', data: omit(person, ['movieLinks'])});//, {isCORS: true});
-    // return fetch(personUrl.update({urlData: {id: personId}, data: omit(person, ['movieLinks'])}), {isCORS: true});
+        return fetch({url: `${personId}`, method: 'POST', data: omit(person, ['movieLinks'])});
     },
     updatePersonIdentity({person}) {
         const personId = person.code;
         return fetch({url: `${personId}`, method: 'POST', data: omit(person, ['movieLinks'])});
-        // return fetch(personUrl.update({urlData: {id: personId}, data: omit(person, ['movieLinks'])}), {isCORS: true});
     }
 }
