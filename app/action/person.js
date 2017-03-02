@@ -2,7 +2,7 @@ import personServices from '../services/person';
 import {actionBuilder} from 'focus-graph/actions/entity-actions-builder';
 
 //---------- IDENTITY
-const _loadIdentityAction = actionBuilder({names: ['personIdentity'], type:'load', service: personServices.loadPerson});
+const _loadIdentityAction = actionBuilder({names: ['personIdentity'], type:'load', service: personServices.loadPersonIdentity});
 export const loadIdentityTypes = _loadIdentityAction.types;
 export const loadIdentityAction = _loadIdentityAction.action;
 
@@ -11,7 +11,7 @@ export const saveIdentityTypes = _saveIdentityAction.types;
 export const saveIdentityAction = _saveIdentityAction.action;
 
 //---------- BIOGRAPHY
-const _loadBiographyAction = actionBuilder({names: ['personBiography'], type:'load', service: personServices.loadPerson});
+const _loadBiographyAction = actionBuilder({names: ['personBiography'], type:'load', service: personServices.loadPersonBiography});
 export const loadBiographyTypes = _loadBiographyAction.types;
 export const loadBiographyAction = _loadBiographyAction.action;
 
