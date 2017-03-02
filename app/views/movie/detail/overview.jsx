@@ -32,14 +32,14 @@ class MovieOverview extends PureComponent {
             <Panel title='view.movie.detail.overview' data-demo='overview' Buttons={null}>
                 {trailerHref &&
                     <div>
-                        <Button label={i18next.t('view.movie.action.watchTrailer')} type='button' handleOnClick={() => this.refs['modal-trailer'].toggleOpen()} />
+                        <Button label='view.movie.action.watchTrailer' type='button' handleOnClick={() => this.refs['modal-trailer'].toggleOpen()} />
                         {<Modal ref='modal-trailer'>
                             <Trailer url={trailerHref} />
                         </Modal>}
                     </div>
                 }
                 <br />
-                <Button label={i18next.t('view.movie.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
+                <Button label='view.movie.action.consult.allocine' type='button' handleOnClick={() => window.open(url,'_blank')} />
             </Panel>
         );
     }

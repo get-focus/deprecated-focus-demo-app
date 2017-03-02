@@ -15,7 +15,7 @@ const PersonOverview = ({data}) => {
     const url = `http://www.allocine.fr/personne/fichepersonne_gen_cpersonne=${code}.html`;
     return (
         <Panel title='view.person.detail.overview' data-demo='overview'>
-            <Button label={i18next.t('view.person.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
+            <Button label='view.person.action.consult.allocine' type='button' handleOnClick={() => window.open(url,'_blank')} />
         </Panel>
     );
 };
