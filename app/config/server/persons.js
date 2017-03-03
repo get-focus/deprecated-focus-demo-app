@@ -2,13 +2,11 @@ import builder from 'focus-core/util/url/builder';
 import {apiRoot} from './index';
 
 const personRoot = `${apiRoot}persons/`;
-
 const personUrlRoot = `${apiRoot}persons`;
 const skipParam = '${skip}';
 const sortFieldNameParam = '${sortFieldName}';
 const sortDescParam = '${sortDesc}';
 const topParam = '${top}';
-
 
 export default {
     create: builder(personRoot, 'POST'),

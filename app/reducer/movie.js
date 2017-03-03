@@ -9,7 +9,6 @@ import {
     saveSynopsisTypes
 } from '../action/movie';
 
-
 // Données initiales pour la state redux
 const DEFAULT_DATA = {};
 

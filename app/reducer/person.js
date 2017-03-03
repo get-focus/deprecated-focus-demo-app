@@ -9,7 +9,6 @@ import {
     loadMovieLinksTypes
 } from '../action/person';
 
-
 // Données initiales pour la state redux
 const DEFAULT_DATA = {
     movieLink: [],
