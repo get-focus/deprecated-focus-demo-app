@@ -42,7 +42,7 @@ export default {
         biography: 'Biographie',
         shortBiography: 'Biographie courte',
         sex: 'Sexe',
-        photoURL: 'URL Photo',
+        photoHref: 'URL Photo',
         birthDate: 'Date de naissance',
         birthPlace: 'Lieu de naissance',
         activity: 'Activité'

@@ -7,15 +7,15 @@ import {Link} from 'react-router';
 import Button from 'focus-components/button';
 
 function PersonCard({onClickPreview, person}) {
-    const {code, leadActor, linked, name, photoURL, role, existsInBdd} = person;
+    const {code, leadActor, linked, name, photoHref, role, existsInBdd} = person;
     const showButtons = false !== existsInBdd;
     return (
         <div className='mdl-card mdl-shadow--4dp person-card' data-demo='material-card'>
             <div className='visuel'>
                 <div>
-                    {photoURL && <img src={photoURL} title='Picture' alt='Picture' />}
+                    {photoHref && <img src={photoHref} title='Picture' alt='Picture' />}
                 </div>
-                {!photoURL &&
+                {!photoHref &&
                     <span className="mdl-card__menu">
                         <Button shape='icon' label='view.person.action.add-photo' icon='add_a_photo' handleOnClick={() => console.log('click on person card add photo')} />
                     </span>

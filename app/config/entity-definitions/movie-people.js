@@ -12,7 +12,7 @@ export default {
         domain: 'DO_LAST_NAME',
         isRequired: true
     },
-    photoURL: {
+    photoHref: {
         domain: 'DO_URL',
         isRequired: false
     },
