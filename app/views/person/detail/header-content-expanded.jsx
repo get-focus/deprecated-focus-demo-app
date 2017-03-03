@@ -31,11 +31,11 @@ class PersonHeaderExpanded extends PureComponent {
 PersonHeaderExpanded.displayName = 'PersonHeaderExpanded';
 
 export default compose(
-    connectToStore(selectData('personBiography', 'personIdentity')),
-    connectToMetadata(['personBiography', 'personIdentity']),
+    connectToStore(selectData('personIdentity', 'personBiography')), // same thing : (state) => state.dataset.movie
+    connectToMetadata(['personIdentity', 'personBiography']),
     connectToForm({
-        formKey: 'personLinkForm',
-        entityPathArray: ['personBiography', 'personIdentity']
-    }),
+        formKey: 'personHeaderExpandedForm',
+        entityPathArray: ['personIdentity', 'personBiography']
+    }), // to map fields with values
     connectToFieldHelpers()
 )(PersonHeaderExpanded);

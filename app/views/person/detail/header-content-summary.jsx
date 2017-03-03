@@ -30,7 +30,7 @@ export default compose(
     connectToStore(selectData('personIdentity')),
     connectToMetadata(['personIdentity']),
     connectToForm({
-        formKey: 'personLinkForm',
+        formKey: 'personHeaderSummaryForm',
         entityPathArray: ['personIdentity']
     }),
     connectToFieldHelpers()
