@@ -1,9 +1,12 @@
-// import fetch from 'focus-core/network/fetch';
-import masterdataUrl from '../config/server/masterdatas';
+import {fetchBuilder} from 'focus-application/fetch/fetch-proxy';
+
+const fetch = fetchBuilder({
+    baseUrl: 'http://localhost:8080/masterdata/',
+    useCredentials: true
+});
 
 export default {
     loadGenders() {
-        // console.log(`[MASTERDATA] call loadGenders() method`);
-        // return fetch(masterdataUrl.loadGenders(), {isCORS: true});
+        return fetch({url: `genders`, method: 'GET'});
     }
 }
